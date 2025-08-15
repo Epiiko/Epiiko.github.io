@@ -1,0 +1,304 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root {
+  /* Primarios Militares */
+  --olive-green: #4a5d23;
+  --forest-green: #2d4016;
+  --military-tan: #8b7355;
+  --desert-sand: #c19a6b;
+
+  /* Grises Tácticos */
+  --gunmetal: #2c3e50;
+  --steel-gray: #5d6d7e;
+  --smoke-gray: #95a5a6;
+  --light-gray: #bdc3c7;
+
+  /* Acentos */
+  --danger-red: #e74c3c;
+  --warning-orange: #e67e22;
+  --tactical-blue: #3498db;
+  --night-vision: #27ae60;
+
+  /* Neutros */
+  --dark-black: #1c1c1c;
+  --charcoal: #34495e;
+  --off-white: #ecf0f1;
+  --pure-white: #ffffff;
+}
+
+/* === CLASES DE UTILIDAD === */
+.bg-olive {
+  background-color: var(--olive-green);
+}
+
+.bg-forest {
+  background-color: var(--forest-green);
+}
+
+.bg-tan {
+  background-color: var(--military-tan);
+}
+
+.bg-sand {
+  background-color: var(--desert-sand);
+}
+
+.bg-gunmetal {
+  background-color: var(--gunmetal);
+}
+
+.bg-steel {
+  background-color: var(--steel-gray);
+}
+
+.text-olive {
+  color: var(--olive-green);
+}
+
+.text-danger {
+  color: var(--danger-red);
+}
+
+.text-tactical {
+  color: var(--tactical-blue);
+}
+
+.text-nvg {
+  color: var(--night-vision);
+}
+
+.military-button {
+  background-color: var(--olive-green);
+  color: var(--off-white);
+  border: 2px solid var(--forest-green);
+  transition: all 0.3s ease;
+}
+
+.military-button:hover {
+  background-color: var(--forest-green);
+  border-color: var(--tactical-blue);
+}
+
+.tactical-card {
+  background: linear-gradient(135deg, var(--gunmetal), var(--charcoal));
+  border: 1px solid var(--steel-gray);
+  color: var(--off-white);
+}
+
+.danger-alert {
+  background-color: var(--danger-red);
+  color: var(--pure-white);
+  border-left: 4px solid var(--warning-orange);
+}
+
+/* Style */
+
+.header {
+  height: 10vh;
+  width: 100vw;
+}
+
+.nav {
+  height: 100%;
+  background-color: var(--gunmetal);
+  filter: brightness(0.8);
+  display: grid;
+  grid-template-columns: 0.5fr 20fr;
+}
+
+#logoDelta {
+  margin: auto;
+  margin-left: 4px;
+  width: 80px;
+}
+
+.optionList {
+  gap: 2%;
+  font-size: 2.2vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0% 2%;
+  place-content: center;
+}
+
+.option {
+  position: relative;
+  padding: 1% 3%;
+  background-color: rgba(233, 233, 233, 0.685);
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;
+
+}
+
+.disabled.option:hover {
+  transform: scaleY(1.1);
+  transform: scaleX(1.1);
+}
+
+
+.active {
+ background: linear-gradient(270deg, #c2b280, #8a614e, #6b8e23, #556b2f);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+/* Animación del degradado */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* FIN HEADER*/
+.caseType {
+  font-size: 5vh;
+  margin-top: 0px;
+  padding-top: 3%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;
+  background-image: url("../img/fondo1.jpg");
+  align-items: center;
+}
+
+.container{
+  background-color: rgba(185, 185, 185, 0.459);
+  width: 90%; 
+  height: 70%;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
+}
+.hidden{
+  display: none !important;
+}
+.showed{
+  display: inline-block;
+}
+/*HOME CONTAINER*/
+#containerHome{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeTitle{
+  margin-top: 2%;
+  font-size: 3vh;
+}
+.homeDescription{
+  margin-top: 2%;
+  width: 90%;
+}
+.explicacion {
+  overflow: hidden;
+}
+.listadoHome{
+  margin: 3% 0%;
+}
+.listadoHome li{
+  margin-top: 1%;
+}
+
+/*FIN CONTENT*/
+
+.footer {
+  height: calc(100vh - 400px);
+  /* Aumenté el espacio disponible */
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+
+.footerContainer {
+  color: red;
+  filter: brightness(0.8);
+  background-color: var(--gunmetal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+/* Derechos reservados */
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  margin-bottom: 2rem;
+}
+
+/* Sección GitHub */
+.github-section {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.github-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.github-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--olive-green);
+  transition: transform 0.3s ease;
+}
+
+.github-avatar:hover {
+  transform: scale(1.1);
+  border-color: var(--tactical-blue);
+}
+
+.github-name {
+  color: var(--off-white);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.github-username {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+
+/* Sección equipo adicional */
+.team-section {
+  text-align: center;
+}
+
+.team-title {
+  color: var(--desert-sand);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.team-member {
+  color: var(--light-gray);
+  padding: 0.5rem;
+  border: 1px solid var(--steel-gray);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  background-color: var(--olive-green);
+  color: var(--off-white);
+}
