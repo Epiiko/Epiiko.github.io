@@ -142,16 +142,26 @@
 
 
 .active {
- background: linear-gradient(270deg, #c2b280, #8a614e, #6b8e23, #556b2f);
+  background: linear-gradient(270deg, #c2b280, #8a614e, #6b8e23, #556b2f);
   background-size: 400% 400%;
   animation: gradientShift 10s ease infinite;
 }
+
 /* Animación del degradado */
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
 /* FIN HEADER*/
 .caseType {
   font-size: 5vh;
@@ -169,28 +179,31 @@
   padding-bottom: 1%;
 }
 
-.container{
+.container {
   background-color: rgba(185, 185, 185, 0.459);
-  width: 90%; 
+  width: 90%;
   min-height: 70%;
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
   overflow: auto;
 }
-.hidden{
+
+.hidden {
   display: none !important;
 }
-.showed{
+
+.showed {
   display: inline-block;
 }
-.descripcionContainer{
+
+.descripcionContainer {
   text-align: center;
   font-size: 2.1vh;
-
   padding-top: 2%;
 }
-.shuffleBoxSingle{
+
+.shuffleBoxSingle {
   height: 20vh;
   background-image: url("../img/fondoShuffle.jpg");
   width: 20vw;
@@ -200,60 +213,73 @@
   display: flex;
   box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.575);
 }
-.shuffleContainerSingle{
+
+.shuffleContainerSingle {
   height: 100%;
   width: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
 }
-.shuffleElementSingle{
+
+.shuffleElementSingle {
   height: 91%;
   width: 95%;
 }
-.shuffleButtonSingle{
+
+.shuffleButtonSingle {
   width: 10vh;
   margin-bottom: 4%;
 }
+
 /*HOME CONTAINER*/
-#containerHome{
+#containerHome {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.homeTitle{
+
+.homeTitle {
   margin-top: 2%;
   font-size: 3vh;
 }
-.homeDescription{
+
+.homeDescription {
   margin-top: 2%;
   width: 90%;
 }
+
 .explicacion {
   overflow: hidden;
 }
-.listadoHome{
+
+.listadoHome {
   margin: 3% 0%;
 }
-.listadoHome li{
+
+.listadoHome li {
   margin-top: 1%;
 
 }
-#containerMapa{
+
+#containerMapa {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 /*FIN HOME CONTAINER*/
-#containerAbout{
+#containerAbout {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.map{
+
+.map {
   width: 100%;
   height: 100%;
 }
+
 /*FIN ABOUT CONTAINER*/
 
 /*FIN CONTENT*/
@@ -351,4 +377,101 @@
 .team-member:hover {
   background-color: var(--olive-green);
   color: var(--off-white);
+}
+
+/* Equipment style */
+
+.cascos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.casco-card {
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.casco-card:hover {
+  transform: translateY(-5px);
+}
+
+.casco-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.casco-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.casco-calidad {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Colores por calidad */
+.calidad-gris {
+  border-color: #6b7280;
+}
+
+.calidad-gris .casco-calidad {
+  background-color: #6b7280;
+  color: white;
+}
+
+.calidad-verde {
+  border-color: #10b981;
+}
+
+.calidad-verde .casco-calidad {
+  background-color: #10b981;
+  color: white;
+}
+
+.calidad-azul {
+  border-color: #3b82f6;
+}
+
+.calidad-azul .casco-calidad {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.calidad-morado {
+  border-color: #8b5cf6;
+}
+
+.calidad-morado .casco-calidad {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.calidad-dorado {
+  border-color: #f59e0b;
+}
+
+.calidad-dorado .casco-calidad {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.calidad-rojo {
+  border-color: #ef4444;
+}
+
+.calidad-rojo .casco-calidad {
+  background-color: #ef4444;
+  color: white;
 }
