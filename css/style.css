@@ -166,21 +166,54 @@
   width: 100%;
   background-image: url("../img/fondo1.jpg");
   align-items: center;
+  padding-bottom: 1%;
 }
 
 .container{
   background-color: rgba(185, 185, 185, 0.459);
   width: 90%; 
-  height: 70%;
+  min-height: 70%;
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
+  overflow: auto;
 }
 .hidden{
   display: none !important;
 }
 .showed{
   display: inline-block;
+}
+.descripcionContainer{
+  text-align: center;
+  font-size: 2.1vh;
+
+  padding-top: 2%;
+}
+.shuffleBoxSingle{
+  height: 20vh;
+  background-image: url("../img/fondoShuffle.jpg");
+  width: 20vw;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.575);
+}
+.shuffleContainerSingle{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.shuffleElementSingle{
+  height: 91%;
+  width: 95%;
+}
+.shuffleButtonSingle{
+  width: 10vh;
+  margin-bottom: 4%;
 }
 /*HOME CONTAINER*/
 #containerHome{
@@ -204,7 +237,24 @@
 }
 .listadoHome li{
   margin-top: 1%;
+
 }
+#containerMapa{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*FIN HOME CONTAINER*/
+#containerAbout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.map{
+  width: 100%;
+  height: 100%;
+}
+/*FIN ABOUT CONTAINER*/
 
 /*FIN CONTENT*/
 

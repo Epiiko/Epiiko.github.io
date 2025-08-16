@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./utils/utils.js" defer></script>
-    <title>Randomizer Delta</title>
+    <title>Delta Shuffle</title>
 </head>
 
 <body>
@@ -29,6 +29,77 @@
     <div id="content" class="content">
         <h2 class="caseType">Inicio</h2>
         <div id="containerHome" class="container showed">
+            <div class="homeTitle">Bienvenidos a Delta Shuffle el randomizador de Delta Force</div>
+            <div class="homeDescription">
+                <div class="homeTexto">¡Lleva tus partidas de Delta Force al siguiente nivel! Con nuestro randomizador,
+                    cada partida se convierte en una experiencia única y desafiante: se seleccionan al azar el mapa,
+                    agente, arma, casco y chaleco de cada jugador, haciendo que cada partida sea imprevisible y
+                    divertida. Además, los viewers pueden interactuar con el streamer, influyendo en las elecciones
+                    aleatorias y haciendo que la partida sea aún más emocionante y participativa.
+                    <br><br>
+                    Ideal para streamers que juegan de manera conjunta, permite que todos los jugadores tengan
+                    combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real.
+                    <br><br>
+                    Diseñado por
+                    Bryan Jaen y Epiko (Nacho Díaz), este randomizador organiza cada categoría en secciones separadas
+                    para que cada elemento pueda seleccionarse de forma independiente y justa, garantizando partidas
+                    dinámicas y emocionantes.
+                </div>
+                <div class="listadoHome">
+                    <li class="explicacion">Mapa - Selecciona al azar uno de los mapas disponibles en Delta Force, cada
+                        partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
+                    <li class="explicacion">Agente - Elige aleatoriamente el personaje o skin que controlará el jugador.
+                    </li>
+                    <li class="explicacion">Arma - Selecciona al azar el arma principal o secundaria para el jugador,
+                        Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de
+                        combate.</li>
+                    <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador,
+                        ofreciendo distintos niveles de protección y apariencia.</li>
+                    <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación
+                        cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
+                </div>
+            </div>
+        </div>
+        <div id="containerCompleto" class="container hidden">
+            <div class="descripcionContainer">
+                Este apartado es para los más atrevidos, bienvenidos al verdadero shufle
+            </div>
+        </div>
+        <div id="containerMapa" class="container hidden">
+            <div class="descripcionContainer">
+                En este apartado se sorteará el mapa a jugar
+            </div>
+            <div class="shuffleContainerSingle">
+                <div class="shuffleBoxSingle">
+                    <div class="shuffleElementSingle">
+                        <img src="./img/ZeroDam.jpg" alt="" class="map">
+                    </div>
+                </div>
+            </div>
+            <button class="shuffleButtonSingle">SHUFFLE</button>
+
+        </div>
+        <div id="containerAgente" class="container hidden">
+            <div class="descripcionContainer">
+                En este apartado se sorteará el agente a jugar
+            </div>
+        </div>
+        <div id="containerArma" class="container hidden">
+            <div class="descripcionContainer">
+                En este apartado se sorteará el arma a jugar
+            </div>
+        </div>
+        <div id="containerCasco" class="container hidden">
+            <div class="descripcionContainer">
+                En este apartado se sorteará el casco a jugar
+            </div>
+        </div>
+        <div id="containerChaleco" class="container hidden">
+            <div class="descripcionContainer">
+                En este apartado se sorteará el chaleco a jugar
+            </div>
+        </div>
+        <div id="containerAbout" class="container hidden">
             <div class="homeTitle">Bienvenidos al randomizador de Delta Force</div>
             <div class="homeDescription">
                 <div class="homeTexto">¡Lleva tus partidas de Delta Force al siguiente nivel! Con nuestro randomizador,
@@ -38,29 +109,28 @@
                     aleatorias y haciendo que la partida sea aún más emocionante y participativa.
                     <br><br>
                     Ideal para streamers que juegan de manera conjunta, permite que todos los jugadores tengan
-                    combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real. Diseñado por
+                    combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real.
+                    <br><br>
+                    Diseñado por
                     Bryan Jaen y Epiko (Nacho Díaz), este randomizador organiza cada categoría en secciones separadas
                     para que cada elemento pueda seleccionarse de forma independiente y justa, garantizando partidas
                     dinámicas y emocionantes.
                 </div>
                 <div class="listadoHome">
-                    <li class="explicacion">Mapa -   Selecciona al azar uno de los mapas disponibles en Delta Force, cada partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
-                    <li class="explicacion">Agente - Elige aleatoriamente el personaje o skin que controlará el jugador. </li>
-                    <li class="explicacion">Arma - Selecciona al azar el arma principal o secundaria para el jugador, Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de combate.</li>
-                    <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador, ofreciendo distintos niveles de protección y apariencia.</li>
-                    <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
+                    <li class="explicacion">Mapa - Selecciona al azar uno de los mapas disponibles en Delta Force, cada
+                        partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
+                    <li class="explicacion">Agente - Elige aleatoriamente el personaje o skin que controlará el jugador.
+                    </li>
+                    <li class="explicacion">Arma - Selecciona al azar el arma principal o secundaria para el jugador,
+                        Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de
+                        combate.</li>
+                    <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador,
+                        ofreciendo distintos niveles de protección y apariencia.</li>
+                    <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación
+                        cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
                 </div>
-                  <div class="homeTexto">*Todos los derechos reservados</div>
             </div>
         </div>
-        <div id="containerCompleto" class="container hidden"></div>
-        <div id="containerMapa" class="container hidden"></div>
-        <div id="containerAgente" class="container hidden"></div>
-        <div id="containerArma" class="container hidden"></div>
-        <div id="containerCasco" class="container hidden"></div>
-        <div id="containerEquipo" class="container hidden"></div>
-        <div id="containerAbout" class="container hidden"></div>
-        <button></button>
     </div>
 
     <div class="footer">
