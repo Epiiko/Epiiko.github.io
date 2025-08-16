@@ -1,9 +1,18 @@
-import { CHALECOS } from "./equipament.js";
+import { CASCOS, MAPAS, CHALECOS } from "./equipament.js";
+import * as  LS from "./recuperarLocalStorage.js"
+
+function recuperarPersistenciaInfo() {
+  localStorage.getItem("completo") ? LS.randomCompleto() : LS.injectarCompleto()
+  !localStorage.getItem("mapa") ? LS.randomMapa() : LS.injectarMapa()
+  localStorage.getItem("agente") ? LS.randomAgente() : LS.injectarAgente()
+  localStorage.getItem("arma") ? LS.randomArma() : LS.injectarArma()
+  !localStorage.getItem("casco") ? LS.randomCasco() : LS.injectarCasco()
+  !localStorage.getItem("chaleco") ? LS.randomChaleco() : LS.injectarChaleco()
+}
 
 /**
  * Funcion para cambiar cambiar de vista cuando se seleccione una pestaña en la barra de navegación
  */
-
 
 function toogleClassMostrar() {
   const option_class = document.querySelectorAll(".option")
@@ -37,33 +46,134 @@ function cambiarTitulo(titulo) {
     elemento.innerHTML = titulo
   }
 }
+function mapaAleatorio() {
+  const imgMapa = document.querySelector('#containerMapa .shuffleElementSingle img')
+  const nameMapa = document.querySelector('#containerMapa .shuffleContainerSingle .shuffleElementName');
 
-function mostrarCascos() {
-  const container = document.getElementById('containerCasco');
-  const descripcionContainer = container.querySelector('.descripcionContainer');
+  let intervalo;
+  let mapaSelected;
 
-  let html = 'En este apartado se sorteará el casco a jugar<br><br>';
-  html += '<div class="cascos-grid">';
+  intervalo = setInterval(() => {
+    imgMapa.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * MAPAS.length);
+      imgMapa.src = MAPAS[randomIndex].image;
+      nameMapa.textContent = `${MAPAS[randomIndex].name} - ${MAPAS[randomIndex].dificultad}`;
+      imgMapa.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, 150);
 
-  CHALECOS.forEach((casco) => {
-    html += `
-      <div class="casco-card calidad-${casco.calidad}">
-        <div class="casco-image">
-          <img src="${casco.image}" alt="${casco.name}" />
-        </div>
-        <div class="casco-info">
-          <h3 class="casco-name">${casco.name}</h3>
-          <span class="casco-calidad calidad-${casco.calidad}">${casco.calidad.toUpperCase()}</span>
-        </div>
-      </div>
-    `;
-  });
+  // paramos a los 8 segundos
+  setTimeout(() => {
+    clearInterval(intervalo);
+    const finalIndex = Math.floor(Math.random() * MAPAS.length);
+    imgMapa.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      imgMapa.src = MAPAS[finalIndex].image;
+      nameMapa.textContent = `${MAPAS[finalIndex].name} - ${MAPAS[finalIndex].dificultad}`;
+      imgMapa.style.transform = "rotateX(0deg)";
+      mapaSelected = {
+        name: MAPAS[finalIndex].name,
+        dificultad: MAPAS[finalIndex].dificultad,
+        image: MAPAS[finalIndex].image
+      }
+      almacenarItem("mapa", mapaSelected);
+    }, 100);
+  }, 6000);
 
-  html += '</div>';
-  descripcionContainer.innerHTML = html;
+}
+function chalecoAleatorio() {
+  const imgChaleco = document.querySelector('#containerChaleco .shuffleElementSingle img')
+  const nameChaleco = document.querySelector('#containerChaleco .shuffleContainerSingle .shuffleElementName');
+
+  let intervalo;
+  let chalecoSelected;
+
+  intervalo = setInterval(() => {
+    imgChaleco.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * CHALECOS.length);
+      imgChaleco.src = CHALECOS[randomIndex].image;
+      nameChaleco.textContent = `${CHALECOS[randomIndex].name} - ${CHALECOS[randomIndex].calidad}`;
+      imgChaleco.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, 150);
+
+  // paramos a los 8 segundos
+  setTimeout(() => {
+    clearInterval(intervalo);
+    const finalIndex = Math.floor(Math.random() * CHALECOS.length);
+    imgChaleco.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      imgChaleco.src = CHALECOS[finalIndex].image;
+      nameChaleco.textContent = `${CHALECOS[finalIndex].name} - ${CHALECOS[finalIndex].calidad}`;
+      imgChaleco.style.transform = "rotateX(0deg)";
+      chalecoSelected = {
+        name: CHALECOS[finalIndex].name,
+        calidad: CHALECOS[finalIndex].calidad,
+        image: CHALECOS[finalIndex].image
+      }
+      almacenarItem("chaleco", chalecoSelected);
+    }, 100);
+  }, 6000);
+
+}
+function cascoAleatorio() {
+  const imgCasco = document.querySelector('#containerCasco .shuffleElementSingle img')
+  const nameCasco = document.querySelector('#containerCasco .shuffleContainerSingle .shuffleElementName');
+
+  let intervalo;
+  let cascoSelected;
+  intervalo = setInterval(() => {
+    imgCasco.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * CASCOS.length);
+      imgCasco.src = CASCOS[randomIndex].image;
+      nameCasco.textContent = `${CASCOS[randomIndex].name} - ${CASCOS[randomIndex].calidad}`;
+      imgCasco.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, 150);
+
+  // paramos a los 8 segundos
+  setTimeout(() => {
+    clearInterval(intervalo);
+    const finalIndex = Math.floor(Math.random() * CHALECOS.length);
+    imgCasco.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      imgCasco.src = CASCOS[finalIndex].image;
+      nameCasco.textContent = `${CASCOS[finalIndex].name} - ${CASCOS[finalIndex].calidad}`;
+      imgCasco.style.transform = "rotateX(0deg)";
+      cascoSelected = {
+        name: CASCOS[finalIndex].name,
+        calidad: CASCOS[finalIndex].calidad,
+        image: CASCOS[finalIndex].image
+      }
+      almacenarItem("casco", cascoSelected);
+    }, 100);
+  }, 6000);
+
 }
 
+function almacenarItem(tipoObjeto, objeto) {
+  localStorage.setItem(tipoObjeto, JSON.stringify(objeto))
+}
+
+//shuffle botones
+//mapa
+document.querySelector('#containerMapa .shuffleButtonSingle').addEventListener('click', () => {
+  mapaAleatorio();
+})
+//chaleco
+document.querySelector('#containerChaleco .shuffleButtonSingle').addEventListener('click', () => {
+  chalecoAleatorio();
+})
+//casco
+document.querySelector('#containerCasco .shuffleButtonSingle').addEventListener('click', () => {
+  cascoAleatorio();
+})
+
+//funciones directas
 toogleClassMostrar();
 actualizarAno();
+recuperarPersistenciaInfo()
 
-document.addEventListener('DOMContentLoaded', mostrarCascos());

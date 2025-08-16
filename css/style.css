@@ -207,19 +207,28 @@
   height: 20vh;
   background-image: url("../img/fondoShuffle.jpg");
   width: 20vw;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
   align-items: center;
   display: flex;
   box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.575);
 }
-
+.shuffleElementName{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  font-weight: bold;
+  font-size: 2.2vh;
+}
 .shuffleContainerSingle {
   height: 100%;
   width: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .shuffleElementSingle {
@@ -262,12 +271,16 @@
 
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #containerMapa {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 /*FIN HOME CONTAINER*/
 #containerAbout {
   display: flex;
@@ -389,7 +402,7 @@
 }
 
 .casco-card {
-  border: 2px solid;
+  /* border: 2px solid; */
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
@@ -460,6 +473,7 @@
 
 .calidad-dorado {
   border-color: #f59e0b;
+  filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 1));
 }
 
 .calidad-dorado .casco-calidad {
