@@ -186,6 +186,8 @@
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
+}
+#containerHome, #containerAboutUs{
   overflow: auto;
 }
 
@@ -476,7 +478,7 @@
   border: 1px solid var(--steel-gray);
   border-radius: 4px;
   transition: all 0.3s ease;
-}
+  }
 
 .team-member:hover {
   background-color: var(--olive-green);

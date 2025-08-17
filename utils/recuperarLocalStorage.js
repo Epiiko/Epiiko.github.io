@@ -2,6 +2,36 @@ import { CASCOS, CHALECOS, MAPAS, AGENTES, ARMAS } from "./equipament.js";
 
 // Random
 export function randomCompleto() {
+  const imgArma = document.querySelector('.itemArma img')
+  const nameArma = document.querySelector('.itemArma .shuffleElementName');
+  const imgMapa = document.querySelector('.itemMapa img')
+  const nameMapa = document.querySelector('.itemMapa .shuffleElementName');
+  const imgCasco = document.querySelector('.itemCasco img')
+  const nameCasco = document.querySelector('.itemCasco .shuffleElementName');
+  const imgChaleco = document.querySelector('.itemChaleco img')
+  const nameChaleco = document.querySelector('.itemChaleco .shuffleElementName');
+  const imgAgente = document.querySelector('.itemAgente img')
+  const nameAgente = document.querySelector('.itemAgente .shuffleElementName');
+
+  let numRandomArmas = Math.floor(Math.random() * ARMAS.length);
+  imgArma.src = ARMAS[numRandomArmas].image;
+  nameArma.innerHTML = ARMAS[numRandomArmas].name
+
+  let numRandomMapa = Math.floor(Math.random() * MAPAS.length);
+  imgMapa.src = MAPAS[numRandomMapa].image;
+  nameMapa.innerHTML = `${MAPAS[numRandomMapa].name} - ${MAPAS[numRandomMapa].dificultad}`
+
+  let numRandomCasco = Math.floor(Math.random() * CASCOS.length);
+  imgCasco.src = CASCOS[numRandomCasco].image;
+  nameCasco.innerHTML = `${CASCOS[numRandomCasco].name} - ${CASCOS[numRandomCasco].calidad}`
+
+  let numRandomChaleco = Math.floor(Math.random() * CHALECOS.length);
+  imgChaleco.src = CHALECOS[numRandomChaleco].image;
+  nameChaleco.innerHTML = `${CHALECOS[numRandomChaleco].name} - ${CHALECOS[numRandomChaleco].calidad}`
+
+  let numRandomAgente = Math.floor(Math.random() * AGENTES.length);
+  imgAgente.src = AGENTES[numRandomAgente].image;
+  nameAgente.innerHTML = AGENTES[numRandomAgente].name
 
 }
 
@@ -54,6 +84,33 @@ export function randomChaleco() {
 }
 // INJECTAR
 export function injectarCompleto() {
+  const imgArma = document.querySelector('.itemArma img')
+  const nameArma = document.querySelector('.itemArma .shuffleElementName');
+  const imgMapa = document.querySelector('.itemMapa img')
+  const nameMapa = document.querySelector('.itemMapa .shuffleElementName');
+  const imgCasco = document.querySelector('.itemCasco img')
+  const nameCasco = document.querySelector('.itemCasco .shuffleElementName');
+  const imgChaleco = document.querySelector('.itemChaleco img')
+  const nameChaleco = document.querySelector('.itemChaleco .shuffleElementName');
+  const imgAgente = document.querySelector('.itemAgente img')
+  const nameAgente = document.querySelector('.itemAgente .shuffleElementName');
+
+  let completo = JSON.parse(localStorage.getItem("completo"))
+
+  imgArma.src = completo.arma.image;
+  nameArma.innerHTML = completo.arma.name
+
+  imgMapa.src = completo.mapa.image;
+  nameMapa.innerHTML = `${completo.mapa.name} - ${completo.mapa.dificultad}`
+
+  imgCasco.src = completo.casco.image;
+  nameCasco.innerHTML = `${completo.casco.name} - ${completo.casco.calidad}`
+
+  imgChaleco.src = completo.chaleco.image;
+  nameChaleco.innerHTML = `${completo.chaleco.name} - ${completo.chaleco.calidad}`
+
+  imgAgente.src = completo.agente.image;
+  nameAgente.innerHTML = completo.agente.name
 
 }
 
