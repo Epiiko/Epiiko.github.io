@@ -2,16 +2,16 @@ import { CASCOS, CHALECOS, MAPAS, AGENTES, ARMAS } from "./equipament.js";
 
 // Random
 export function randomCompleto() {
-  const imgArma = document.querySelector('.itemArma img')
-  const nameArma = document.querySelector('.itemArma .shuffleElementName');
-  const imgMapa = document.querySelector('.itemMapa img')
-  const nameMapa = document.querySelector('.itemMapa .shuffleElementName');
-  const imgCasco = document.querySelector('.itemCasco img')
-  const nameCasco = document.querySelector('.itemCasco .shuffleElementName');
-  const imgChaleco = document.querySelector('.itemChaleco img')
-  const nameChaleco = document.querySelector('.itemChaleco .shuffleElementName');
-  const imgAgente = document.querySelector('.itemAgente img')
-  const nameAgente = document.querySelector('.itemAgente .shuffleElementName');
+  const imgArma = document.querySelector('.itemArma .complete-image')
+  const nameArma = document.querySelector('.itemArma .complete-name');
+  const imgMapa = document.querySelector('.itemMapa .complete-image')
+  const nameMapa = document.querySelector('.itemMapa .complete-name');
+  const imgCasco = document.querySelector('.itemCasco .complete-image')
+  const nameCasco = document.querySelector('.itemCasco .complete-name');
+  const imgChaleco = document.querySelector('.itemChaleco .complete-image')
+  const nameChaleco = document.querySelector('.itemChaleco .complete-name');
+  const imgAgente = document.querySelector('.itemAgente .complete-image')
+  const nameAgente = document.querySelector('.itemAgente .complete-name');
 
   let numRandomArmas = Math.floor(Math.random() * ARMAS.length);
   imgArma.src = ARMAS[numRandomArmas].image;
@@ -36,8 +36,8 @@ export function randomCompleto() {
 }
 
 export function randomMapa() {
-  const imgMapa = document.querySelector('#containerMapa .shuffleElementSingle img')
-  const nameMapa = document.querySelector('#containerMapa .shuffleContainerSingle .shuffleElementName');
+  const imgMapa = document.querySelector('#containerMapa .shuffle-image')
+  const nameMapa = document.querySelector('#containerMapa .shuffle-name');
 
   let numRandom = Math.floor(Math.random() * MAPAS.length);
 
@@ -46,8 +46,8 @@ export function randomMapa() {
 }
 
 export function randomAgente() {
-  const imgAgente = document.querySelector('#containerAgente .shuffleElementSingle img')
-  const nameAgente = document.querySelector('#containerAgente .shuffleContainerSingle .shuffleElementName');
+  const imgAgente = document.querySelector('#containerAgente .shuffle-image')
+  const nameAgente = document.querySelector('#containerAgente .shuffle-name');
   let numRandom = Math.floor(Math.random() * AGENTES.length);
 
   imgAgente.src = AGENTES[numRandom].image;
@@ -55,8 +55,8 @@ export function randomAgente() {
 }
 
 export function randomArma() {
-  const imgArma = document.querySelector('#containerArma .shuffleElementSingle img')
-  const nameArma = document.querySelector('#containerArma .shuffleContainerSingle .shuffleElementName');
+  const imgArma = document.querySelector('#containerArma .shuffle-image')
+  const nameArma = document.querySelector('#containerArma .shuffle-name');
   let numRandom = Math.floor(Math.random() * ARMAS.length);
 
   imgArma.src = ARMAS[numRandom].image;
@@ -65,8 +65,8 @@ export function randomArma() {
 
 export function randomCasco() {
 
-  const imgCasco = document.querySelector('#containerCasco .shuffleElementSingle img')
-  const nameCasco = document.querySelector('#containerCasco .shuffleContainerSingle .shuffleElementName');
+  const imgCasco = document.querySelector('#containerCasco .shuffle-image')
+  const nameCasco = document.querySelector('#containerCasco .shuffle-name');
 
   let numRandom = Math.floor(Math.random() * CASCOS.length);
 
@@ -74,8 +74,8 @@ export function randomCasco() {
   nameCasco.innerHTML = `${CASCOS[numRandom].name} - ${CASCOS[numRandom].calidad}`
 }
 export function randomChaleco() {
-  const imgChaleco = document.querySelector('#containerChaleco .shuffleElementSingle img')
-  const nameChaleco = document.querySelector('#containerChaleco .shuffleContainerSingle .shuffleElementName');
+  const imgChaleco = document.querySelector('#containerChaleco .shuffle-image')
+  const nameChaleco = document.querySelector('#containerChaleco .shuffle-name');
 
   let numRandom = Math.floor(Math.random() * CHALECOS.length);
 
@@ -84,16 +84,16 @@ export function randomChaleco() {
 }
 // INJECTAR
 export function injectarCompleto() {
-  const imgArma = document.querySelector('.itemArma img')
-  const nameArma = document.querySelector('.itemArma .shuffleElementName');
-  const imgMapa = document.querySelector('.itemMapa img')
-  const nameMapa = document.querySelector('.itemMapa .shuffleElementName');
-  const imgCasco = document.querySelector('.itemCasco img')
-  const nameCasco = document.querySelector('.itemCasco .shuffleElementName');
-  const imgChaleco = document.querySelector('.itemChaleco img')
-  const nameChaleco = document.querySelector('.itemChaleco .shuffleElementName');
-  const imgAgente = document.querySelector('.itemAgente img')
-  const nameAgente = document.querySelector('.itemAgente .shuffleElementName');
+  const imgArma = document.querySelector('.itemArma .complete-image')
+  const nameArma = document.querySelector('.itemArma .complete-name');
+  const imgMapa = document.querySelector('.itemMapa .complete-image')
+  const nameMapa = document.querySelector('.itemMapa .complete-name');
+  const imgCasco = document.querySelector('.itemCasco .complete-image')
+  const nameCasco = document.querySelector('.itemCasco .complete-name');
+  const imgChaleco = document.querySelector('.itemChaleco .complete-image')
+  const nameChaleco = document.querySelector('.itemChaleco .complete-name');
+  const imgAgente = document.querySelector('.itemAgente .complete-image')
+  const nameAgente = document.querySelector('.itemAgente .complete-name');
 
   let completo = JSON.parse(localStorage.getItem("completo"))
 
@@ -115,8 +115,8 @@ export function injectarCompleto() {
 }
 
 export function injectarMapa() {
-  const imgMapa = document.querySelector('#containerMapa .shuffleElementSingle img')
-  const nameMapa = document.querySelector('#containerMapa .shuffleContainerSingle .shuffleElementName');
+  const imgMapa = document.querySelector('#containerMapa .shuffle-image')
+  const nameMapa = document.querySelector('#containerMapa .shuffle-name');
   let mapa = JSON.parse(localStorage.getItem("mapa"))
   imgMapa.src = mapa.image;
   nameMapa.innerHTML = `${mapa.name} - ${mapa.dificultad}`
@@ -124,8 +124,8 @@ export function injectarMapa() {
 }
 
 export function injectarAgente() {
-  const imgAgente = document.querySelector('#containerAgente .shuffleElementSingle img')
-  const nameAgente = document.querySelector('#containerAgente .shuffleContainerSingle .shuffleElementName');
+  const imgAgente = document.querySelector('#containerAgente .shuffle-image')
+  const nameAgente = document.querySelector('#containerAgente .shuffle-name');
   let agente = JSON.parse(localStorage.getItem("agente"))
   imgAgente.src = agente.image;
   nameAgente.innerHTML = agente.name
@@ -133,24 +133,24 @@ export function injectarAgente() {
 }
 
 export function injectarArma() {
-  const imgArma = document.querySelector('#containerArma .shuffleElementSingle img')
-  const nameArma = document.querySelector('#containerArma .shuffleContainerSingle .shuffleElementName');
+  const imgArma = document.querySelector('#containerArma .shuffle-image')
+  const nameArma = document.querySelector('#containerArma .shuffle-name');
   let arma = JSON.parse(localStorage.getItem("arma"))
   imgArma.src = arma.image;
   nameArma.innerHTML = arma.name
 }
 
 export function injectarCasco() {
-  const imgCasco = document.querySelector('#containerCasco .shuffleElementSingle img')
-  const nameCasco = document.querySelector('#containerCasco .shuffleContainerSingle .shuffleElementName');
+  const imgCasco = document.querySelector('#containerCasco .shuffle-image')
+  const nameCasco = document.querySelector('#containerCasco .shuffle-name');
   let casco = JSON.parse(localStorage.getItem("casco"))
   imgCasco.src = casco.image;
   nameCasco.innerHTML = `${casco.name} - ${casco.calidad}`
 }
 
 export function injectarChaleco() {
-  const imgChaleco = document.querySelector('#containerChaleco .shuffleElementSingle img')
-  const nameChaleco = document.querySelector('#containerChaleco .shuffleContainerSingle .shuffleElementName');
+  const imgChaleco = document.querySelector('#containerChaleco .shuffle-image')
+  const nameChaleco = document.querySelector('#containerChaleco .shuffle-name');
   let chaleco = JSON.parse(localStorage.getItem("chaleco"))
   imgChaleco.src = chaleco.image;
   nameChaleco.innerHTML = `${chaleco.name} - ${chaleco.calidad}`

@@ -29,10 +29,12 @@ function toogleClassMostrar() {
 
   option_class.forEach((span, index) => {
     span.addEventListener("click", (ev) => {
-      if (ev.target.classList.contains("disabled")) {
+      const clickedOption = ev.currentTarget;
+      if (clickedOption.classList.contains("disabled")) {
         document.querySelector(".active").classList.replace("active", "disabled");
-        ev.target.classList.replace("disabled", "active");
-        cambiarTitulo(ev.target.innerHTML)
+        clickedOption.classList.replace("disabled", "active");
+        const optionText = clickedOption.querySelector(".option-text").textContent;
+        cambiarTitulo(optionText)
         document.querySelector(".showed").classList.replace("showed", "hidden")
         document.querySelectorAll(".container")[index].classList.replace("hidden", "showed");
       }
@@ -57,8 +59,8 @@ function cambiarTitulo(titulo) {
   }
 }
 function mapaAleatorio() {
-  const imgMapa = document.querySelector('#containerMapa .shuffleElementSingle img')
-  const nameMapa = document.querySelector('#containerMapa .shuffleContainerSingle .shuffleElementName');
+  const imgMapa = document.querySelector('#containerMapa .shuffle-image')
+  const nameMapa = document.querySelector('#containerMapa .shuffle-name');
 
   let intervalo;
   let mapaSelected;
@@ -93,8 +95,8 @@ function mapaAleatorio() {
 
 }
 function chalecoAleatorio() {
-  const imgChaleco = document.querySelector('#containerChaleco .shuffleElementSingle img')
-  const nameChaleco = document.querySelector('#containerChaleco .shuffleContainerSingle .shuffleElementName');
+  const imgChaleco = document.querySelector('#containerChaleco .shuffle-image')
+  const nameChaleco = document.querySelector('#containerChaleco .shuffle-name');
 
   let intervalo;
   let chalecoSelected;
@@ -129,8 +131,8 @@ function chalecoAleatorio() {
 
 }
 function cascoAleatorio() {
-  const imgCasco = document.querySelector('#containerCasco .shuffleElementSingle img')
-  const nameCasco = document.querySelector('#containerCasco .shuffleContainerSingle .shuffleElementName');
+  const imgCasco = document.querySelector('#containerCasco .shuffle-image')
+  const nameCasco = document.querySelector('#containerCasco .shuffle-name');
 
   let intervalo;
   let cascoSelected;
@@ -147,7 +149,7 @@ function cascoAleatorio() {
   // paramos a los 8 segundos
   setTimeout(() => {
     clearInterval(intervalo);
-    const finalIndex = Math.floor(Math.random() * CHALECOS.length);
+    const finalIndex = Math.floor(Math.random() * CASCOS.length);
     imgCasco.style.transform = "rotateX(90deg)";
     setTimeout(() => {
       imgCasco.src = CASCOS[finalIndex].image;
@@ -164,8 +166,8 @@ function cascoAleatorio() {
 
 }
 function agenteAleatorio() {
-  const imgAgente = document.querySelector('#containerAgente .shuffleElementSingle img')
-  const nameAgente = document.querySelector('#containerAgente .shuffleContainerSingle .shuffleElementName');
+  const imgAgente = document.querySelector('#containerAgente .shuffle-image')
+  const nameAgente = document.querySelector('#containerAgente .shuffle-name');
 
   let intervalo;
   let agenteSelected;
@@ -198,8 +200,8 @@ function agenteAleatorio() {
 
 }
 function armaAleatorio() {
-  const imgArma = document.querySelector('#containerArma .shuffleElementSingle img')
-  const nameArma = document.querySelector('#containerArma .shuffleContainerSingle .shuffleElementName');
+  const imgArma = document.querySelector('#containerArma .shuffle-image')
+  const nameArma = document.querySelector('#containerArma .shuffle-name');
 
   let intervalo;
   let armaSelected;
@@ -233,16 +235,16 @@ function armaAleatorio() {
 }
 
 function completoAleatorio() {
-  const imgArma = document.querySelector('.itemArma img')
-  const nameArma = document.querySelector('.itemArma .shuffleElementName');
-  const imgMapa = document.querySelector('.itemMapa img')
-  const nameMapa = document.querySelector('.itemMapa .shuffleElementName');
-  const imgCasco = document.querySelector('.itemCasco img')
-  const nameCasco = document.querySelector('.itemCasco .shuffleElementName');
-  const imgChaleco = document.querySelector('.itemChaleco img')
-  const nameChaleco = document.querySelector('.itemChaleco .shuffleElementName');
-  const imgAgente = document.querySelector('.itemAgente img')
-  const nameAgente = document.querySelector('.itemAgente .shuffleElementName');
+  const imgArma = document.querySelector('.itemArma .complete-image')
+  const nameArma = document.querySelector('.itemArma .complete-name');
+  const imgMapa = document.querySelector('.itemMapa .complete-image')
+  const nameMapa = document.querySelector('.itemMapa .complete-name');
+  const imgCasco = document.querySelector('.itemCasco .complete-image')
+  const nameCasco = document.querySelector('.itemCasco .complete-name');
+  const imgChaleco = document.querySelector('.itemChaleco .complete-image')
+  const nameChaleco = document.querySelector('.itemChaleco .complete-name');
+  const imgAgente = document.querySelector('.itemAgente .complete-image')
+  const nameAgente = document.querySelector('.itemAgente .complete-name');
 
   let completoSelected;
   const intervalos = []; // Array para almacenar todos los intervalos
@@ -397,23 +399,23 @@ document.querySelector('.shuffleButtonCompleto').addEventListener('click', () =>
   completoAleatorio();
 })
 //mapa
-document.querySelector('#containerMapa .shuffleButtonSingle').addEventListener('click', () => {
+document.querySelector('#containerMapa .shuffle-btn').addEventListener('click', () => {
   mapaAleatorio();
 })
 //chaleco
-document.querySelector('#containerChaleco .shuffleButtonSingle').addEventListener('click', () => {
+document.querySelector('#containerChaleco .shuffle-btn').addEventListener('click', () => {
   chalecoAleatorio();
 })
 //casco
-document.querySelector('#containerCasco .shuffleButtonSingle').addEventListener('click', () => {
+document.querySelector('#containerCasco .shuffle-btn').addEventListener('click', () => {
   cascoAleatorio();
 })
 //agente
-document.querySelector('#containerAgente .shuffleButtonSingle').addEventListener('click', () => {
+document.querySelector('#containerAgente .shuffle-btn').addEventListener('click', () => {
   agenteAleatorio();
 })
 //arma
-document.querySelector('#containerArma .shuffleButtonSingle').addEventListener('click', () => {
+document.querySelector('#containerArma .shuffle-btn').addEventListener('click', () => {
   armaAleatorio();
 })
 
