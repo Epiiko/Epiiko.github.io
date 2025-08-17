@@ -187,7 +187,9 @@
   border-radius: 20px;
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
 }
-#containerHome, #containerAboutUs{
+
+#containerHome,
+#containerAboutUs {
   overflow: auto;
 }
 
@@ -201,7 +203,8 @@
 
 .descripcionContainer {
   text-align: center;
-  font-size: 2.1vh;
+  font-size: 3vh;
+  font-weight: bold;
   padding-top: 2%;
 }
 
@@ -250,7 +253,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: bold;
 }
+
+#containerHome:hover {
+  background-color: rgba(185, 185, 185, 0.7);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#containerAbout:hover {
+  background-color: rgba(185, 185, 185, 0.7);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.637);
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
 
 .homeTitle {
   margin-top: 2%;
@@ -292,6 +313,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: bold;
 }
 
 .map {
@@ -324,7 +346,7 @@
 }
 
 /*FIN ABOUT CONTAINER*/
-.shuffleBoxCompleto{
+.shuffleBoxCompleto {
   height: 15vh;
   background-image: url("../img/fondoShuffle.jpg");
   width: 12vw;
@@ -335,18 +357,20 @@
   display: flex;
   box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.575);
 }
+
 .shuffleElementCompleto {
   height: 91%;
   width: 95%;
 }
+
 .shuffleContainerCompleto {
   margin-top: 1%;
   height: 85%;
-  width: 100%;
-  align-content: center;
-  justify-content: center;
+  place-content: center;
   text-align: center;
-  display: flex;
+  place-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   flex-direction: column;
   gap: 20px;
   /* espacio entre filas */
@@ -355,9 +379,8 @@
 
 .containerGigante {
   height: 100%;
-  width: 100%;
-  align-content: center;
-  justify-content: center;
+  width: 80%;
+  place-content: center;
   text-align: center;
 }
 
@@ -366,26 +389,10 @@
   margin-bottom: 1%;
   margin-top: 1%;
 }
-.fila2 .shuffleBoxCompleto{
+
+.fila2 .shuffleBoxCompleto {
   height: 15vh;
   width: 15vw;
-}
-.fila2 .shuffleBoxCompleto{
-  height: 15vh;
-  width: 15vw;
-}
-
-.fila1 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3 columnas iguales */
-
-}
-
-.fila2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* 2 columnas iguales */
 }
 
 /*FIN CONTENT*/
@@ -478,7 +485,7 @@
   border: 1px solid var(--steel-gray);
   border-radius: 4px;
   transition: all 0.3s ease;
-  }
+}
 
 .team-member:hover {
   background-color: var(--olive-green);

@@ -2,268 +2,265 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script type="module" src="./utils/utils.js" defer></script>
-    <script type="module" src="./utils/recuperarLocalStorage.js"></script>
-    <title>Delta Shuffle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="./utils/utils.js" defer></script>
+  <script type="module" src="./utils/recuperarLocalStorage.js"></script>
+  <title>Delta Shuffle</title>
 </head>
 
 <body>
-    <header id="barraSuperior" class="header">
-        <nav id="nav" class="nav">
-            <img src="./img/LogoDelta.png" alt="logoDelta" id="logoDelta">
-            <div class="optionList">
-                <span id="option0" class="option active">Inicio</span>
-                <span id="option1" class="option disabled">Completo</span>
-                <span id="option2" class="option disabled">Mapa</span>
-                <span id="option3" class="option disabled">Agente</span>
-                <span id="option4" class="option disabled">Arma</span>
-                <span id="option5" class="option disabled">Casco</span>
-                <span id="option6" class="option disabled">Chaleco</span>
-                <span id="option7" class="option disabled">About us</span>
-            </div>
-        </nav>
-    </header>
-    <div id="content" class="content">
-        <h2 class="caseType">Inicio</h2>
-        <div id="containerHome" class="container showed">
-            <div class="homeTitle">Bienvenidos a Delta Shuffle el randomizador de Delta Force</div>
-            <div class="homeDescription">
-                <div class="homeTexto">¡Lleva tus partidas de Delta Force al siguiente nivel! Con nuestro randomizador,
-                    cada partida se convierte en una experiencia única y desafiante: se seleccionan al azar el mapa,
-                    agente, arma, casco y chaleco de cada jugador, haciendo que cada partida sea imprevisible y
-                    divertida. Además, los viewers pueden interactuar con el streamer, influyendo en las elecciones
-                    aleatorias y haciendo que la partida sea aún más emocionante y participativa.
-                    <br><br>
-                    Ideal para streamers que juegan de manera conjunta, permite que todos los jugadores tengan
-                    combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real.
-                    <br><br>
-                    Diseñado por
-                    jaenDev (Brian Jaén) y Epiko (Nacho Díaz), este randomizador organiza cada categoría en secciones
-                    separadas
-                    para que cada elemento pueda seleccionarse de forma independiente y justa, garantizando partidas
-                    dinámicas y emocionantes.
-                </div>
-                <div class="listadoHome">
-                    <li class="explicacion">Mapa - Selecciona al azar uno de los mapas disponibles en Delta Force, cada
-                        partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
-                    <li class="explicacion">Agente - Elige aleatoriamente el personaje que controlará el jugador.
-                    </li>
-                    <li class="explicacion">Arma - Selecciona al azar el arma principal para el jugador,
-                        Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de
-                        combate.</li>
-                    <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador,
-                        ofreciendo distintos niveles de protección y apariencia.</li>
-                    <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación
-                        cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
-                </div>
-            </div>
+  <header id="barraSuperior" class="header">
+    <nav id="nav" class="nav">
+      <img src="./img/LogoDelta.png" alt="logoDelta" id="logoDelta">
+      <div class="optionList">
+        <span id="option0" class="option active">Inicio</span>
+        <span id="option1" class="option disabled">Completo</span>
+        <span id="option2" class="option disabled">Mapa</span>
+        <span id="option3" class="option disabled">Agente</span>
+        <span id="option4" class="option disabled">Arma</span>
+        <span id="option5" class="option disabled">Casco</span>
+        <span id="option6" class="option disabled">Chaleco</span>
+        <span id="option7" class="option disabled">About us</span>
+      </div>
+    </nav>
+  </header>
+  <div id="content" class="content">
+    <h2 class="caseType">Inicio</h2>
+    <div id="containerHome" class="container showed">
+      <div class="homeTitle">Bienvenidos a Delta Shuffle el randomizador de Delta Force</div>
+      <div class="homeDescription">
+        <div class="homeTexto">¡Lleva tus partidas de Delta Force al siguiente nivel! Con nuestro randomizador,
+          cada partida se convierte en una experiencia única y desafiante: se seleccionan al azar el mapa,
+          agente, arma, casco y chaleco de cada jugador, haciendo que cada partida sea imprevisible y
+          divertida. Además, los viewers pueden interactuar con el streamer, influyendo en las elecciones
+          aleatorias y haciendo que la partida sea aún más emocionante y participativa.
+          <br><br>
+          Ideal para streamers que juegan de manera conjunta, permite que todos los jugadores tengan
+          combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real.
+          <br><br>
+          Diseñado por
+          jaenDev (Brian Jaén) y Epiko (Nacho Díaz), este randomizador organiza cada categoría en secciones
+          separadas
+          para que cada elemento pueda seleccionarse de forma independiente y justa, garantizando partidas
+          dinámicas y emocionantes.
         </div>
-        <div id="containerCompleto" class="container hidden">
-            <div class="descripcionContainer">
-                Este apartado es para los más atrevidos, bienvenidos al verdadero shufle
-            </div>
-            <div class="containerGigante">
-                <div class="shuffleContainerCompleto">
-                    <div class="fila fila1">
-                        <div class="itemAgente">
-                            <div class="shuffleBoxCompleto">
-                                <div class="shuffleElementCompleto">
-                                    <img src="./img/agents/agent5.jpg" alt="" class="map">
-                                </div>
-                            </div>
-                            <div class="shuffleElementName">Agente</div>
-                        </div>
-                        <div class="itemChaleco">
-                            <div class="shuffleBoxCompleto">
-                                <div class="shuffleElementCompleto">
-                                    <img src="./img/chest/chest16.png" alt="" class="map">
-                                </div>
-                            </div>
-                            <div class="shuffleElementName">Chaleco</div>
-                        </div>
-                        <div class="itemCasco">
-                            <div class="shuffleBoxCompleto">
-                                <div class="shuffleElementCompleto">
-                                    <img src="./img/helmets/casco21.png" alt="" class="map">
-                                </div>
-                            </div>
-                            <div class="shuffleElementName">Casco</div>
-                        </div>
-                    </div>
-                    <div class="fila fila2">
-                        <div class="itemMapa">
-                            <div class="shuffleBoxCompleto">
-                                <div class="shuffleElementCompleto">
-                                    <img src="./img/maps/map5.png" alt="" class="map">
-                                </div>
-                            </div>
-                            <div class="shuffleElementName">Mapa</div>
-                        </div>
-                        <div class="itemArma">
-
-                            <div class="shuffleBoxCompleto">
-                                <div class="shuffleElementCompleto">
-                                    <img src="./img/weapons/wp12.png" alt="" class="map">
-                                </div>
-                            </div>
-                            <div class="shuffleElementName">Arma</div>
-                        </div>
-                    </div>
-                </div>
-                <button class="shuffleButtonCompleto">SHUFFLE</button>
-            </div>
+        <div class="listadoHome">
+          <li class="explicacion">Mapa - Selecciona al azar uno de los mapas disponibles en Delta Force, cada
+            partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
+          <li class="explicacion">Agente - Elige aleatoriamente el personaje que controlará el jugador.
+          </li>
+          <li class="explicacion">Arma - Selecciona al azar el arma principal para el jugador,
+            Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de
+            combate.</li>
+          <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador,
+            ofreciendo distintos niveles de protección y apariencia.</li>
+          <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación
+            cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
         </div>
-        <div id="containerMapa" class="container hidden">
-            <div class="descripcionContainer">
-                En este apartado se sorteará el mapa a jugar
-            </div>
-            <div class="shuffleContainerSingle">
-                <div class="shuffleBoxSingleMapa">
-                    <div class="shuffleElementSingle">
-                        <img src="" alt="" class="map">
-                    </div>
-                </div>
-                <div class="shuffleElementName"></div>
-            </div>
-            <button class="shuffleButtonSingle">SHUFFLE</button>
-
-        </div>
-        <div id="containerAgente" class="container hidden">
-            <div class="descripcionContainer">
-                En este apartado se sorteará el agente a jugar
-            </div>
-            <div class="shuffleContainerSingle">
-                <div class="shuffleBoxSingle">
-                    <div class="shuffleElementSingle">
-                        <img src="" alt="" class="map">
-                    </div>
-                </div>
-                <div class="shuffleElementName"></div>
-            </div>
-            <button class="shuffleButtonSingle">SHUFFLE</button>
-        </div>
-        <div id="containerArma" class="container hidden">
-            <div class="descripcionContainer">
-                En este apartado se sorteará el arma a jugar
-            </div>
-            <div class="shuffleContainerSingle">
-                <div class="shuffleBoxSingleArma">
-                    <div class="shuffleElementSingle">
-                        <img src="" alt="" class="map">
-                    </div>
-                </div>
-                <div class="shuffleElementName"></div>
-            </div>
-            <button class="shuffleButtonSingle">SHUFFLE</button>
-        </div>
-        <div id="containerCasco" class="container hidden">
-            <div class="descripcionContainer">
-                En este apartado se sorteará el casco a jugar
-            </div>
-            <div class="shuffleContainerSingle">
-                <div class="shuffleBoxSingle">
-                    <div class="shuffleElementSingle">
-                        <img src="" alt="" class="map">
-                    </div>
-                </div>
-                <div class="shuffleElementName"></div>
-            </div>
-            <button class="shuffleButtonSingle">SHUFFLE</button>
-        </div>
-        <div id="containerChaleco" class="container hidden">
-            <div class="descripcionContainer">
-                En este apartado se sorteará el chaleco a jugar
-            </div>
-            <div class="shuffleContainerSingle">
-                <div class="shuffleBoxSingle">
-                    <div class="shuffleElementSingle">
-                        <img src="" alt="" class="map">
-                    </div>
-                </div>
-                <div class="shuffleElementName"></div>
-            </div>
-            <button class="shuffleButtonSingle">SHUFFLE</button>
-        </div>
-        <div id="containerAbout" class="container hidden">
-            <div class="homeTitle">Bienvenidos al randomizador de Delta Force</div>
-            <div class="homeDescription">
-                <div class="homeTexto">¡Lleva tus partidas de Delta Force al siguiente nivel! Con nuestro randomizador,
-                    cada partida se convierte en una experiencia única y desafiante: se seleccionan al azar el mapa,
-                    agente, arma, casco y chaleco de cada jugador, haciendo que cada partida sea imprevisible y
-                    divertida. Además, los viewers pueden interactuar con el streamer, influyendo en las elecciones
-                    aleatorias y haciendo que la partida sea aún más emocionante y participativa.
-                    <br><br>
-                    Ideal para streamers que juegan de manera conjunta, permite que todos los jugadores tengan
-                    combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real.
-                    <br><br>
-                    Diseñado por
-                    Bryan Jaen y Epiko (Nacho Díaz), este randomizador organiza cada categoría en secciones separadas
-                    para que cada elemento pueda seleccionarse de forma independiente y justa, garantizando partidas
-                    dinámicas y emocionantes.
-                </div>
-                <div class="listadoHome">
-                    <li class="explicacion">Mapa - Selecciona al azar uno de los mapas disponibles en Delta Force, cada
-                        partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
-                    <li class="explicacion">Agente - Elige aleatoriamente el personaje o skin que controlará el jugador.
-                    </li>
-                    <li class="explicacion">Arma - Selecciona al azar el arma principal o secundaria para el jugador,
-                        Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de
-                        combate.</li>
-                    <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador,
-                        ofreciendo distintos niveles de protección y apariencia.</li>
-                    <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación
-                        cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-
-    <div class="footer">
-        <div class="footerContainer">
-
-            <div class="copyright"></div>
-
-            <div class="github-section">
-                <div class="github-profile">
-                    <a href="https://github.com/Epiiko/" target="_blank" class="github-name">
-                        <img src="https://avatars.githubusercontent.com/u/146927522?s=48&v=4" alt="epiiko"
-                            class="github-avatar">
-                    </a>
-                    <a href="https://github.com/Epiiko" target="_blank" class="github-name">Epiiko</a>
-                    <span class="github-username">@Epiiko</span>
-                </div>
-
-                <div class="github-profile">
-                    <a href="https://github.com/jaendev" class="github-name" target="_blank">
-                        <img src="https://avatars.githubusercontent.com/u/91150400?v=4" alt="jaendev"
-                            class="github-avatar">
-                    </a>
-                    <a href="https://github.com/jaendev" class="github-name" target="_blank">JaenDev</a>
-                    <span class="github-username">@jaendev</span>
-                </div>
+    <div id="containerCompleto" class="container hidden">
+      <div class="descripcionContainer">
+        Este apartado es para los más atrevidos, bienvenidos al verdadero shufle
+      </div>
+      <div class="containerGigante">
+        <div class="shuffleContainerCompleto">
+          <div class="itemAgente">
+            <div class="shuffleBoxCompleto">
+              <div class="shuffleElementCompleto">
+                <img src="./img/agents/agent5.jpg" alt="" class="map">
+              </div>
             </div>
-
-            <div class="team-section">
-                <h3 class="team-title">🎖️ Equipo Delta Force</h3>
-                <div class="team-members">
-                    <a href="https://www.twitch.tv/campasoo">
-                        <div class="team-member">Campaso</div>
-                    </a>
-                    <a href="https://www.twitch.tv/hyggekd">
-                        <div class="team-member">Hygge</div>
-                    </a>
-                    <a href="https://www.twitch.tv/nemereth">
-                        <div class="team-member">Nemereth</div>
-                    </a>
-                </div>
+            <div class="shuffleElementName">Agente</div>
+          </div>
+          <div></div>
+          <div class="itemChaleco">
+            <div class="shuffleBoxCompleto">
+              <div class="shuffleElementCompleto">
+                <img src="./img/chest/chest16.png" alt="" class="map">
+              </div>
             </div>
-
+            <div class="shuffleElementName">Chaleco</div>
+          </div>
+          <div></div>
+          <div class="itemCasco">
+            <div class="shuffleBoxCompleto">
+              <div class="shuffleElementCompleto">
+                <img src="./img/helmets/casco21.png" alt="" class="map">
+              </div>
+            </div>
+            <div class="shuffleElementName">Casco</div>
+          </div>
+          <div> </div>
+          <div class="itemMapa fila2">
+            <div class="shuffleBoxCompleto">
+              <div class="shuffleElementCompleto">
+                <img src="./img/maps/map5.png" alt="" class="map">
+              </div>
+            </div>
+            <div class="shuffleElementName">Mapa</div>
+          </div>
+          <div></div>
+          <div class="itemArma fila2">
+            <div class="shuffleBoxCompleto">
+              <div class="shuffleElementCompleto">
+                <img src="./img/weapons/wp12.png" alt="" class="map">
+              </div>
+            </div>
+            <div class="shuffleElementName">Arma</div>
+          </div>
         </div>
+        <button class="shuffleButtonCompleto">SHUFFLE</button>
+      </div>
     </div>
+    <div id="containerMapa" class="container hidden">
+      <div class="descripcionContainer">
+        En este apartado se sorteará el mapa a jugar
+      </div>
+      <div class="shuffleContainerSingle">
+        <div class="shuffleBoxSingleMapa">
+          <div class="shuffleElementSingle">
+            <img src="" alt="" class="map">
+          </div>
+        </div>
+        <div class="shuffleElementName"></div>
+      </div>
+      <button class="shuffleButtonSingle">SHUFFLE</button>
+
+    </div>
+    <div id="containerAgente" class="container hidden">
+      <div class="descripcionContainer">
+        En este apartado se sorteará el agente a jugar
+      </div>
+      <div class="shuffleContainerSingle">
+        <div class="shuffleBoxSingle">
+          <div class="shuffleElementSingle">
+            <img src="" alt="" class="map">
+          </div>
+        </div>
+        <div class="shuffleElementName"></div>
+      </div>
+      <button class="shuffleButtonSingle">SHUFFLE</button>
+    </div>
+    <div id="containerArma" class="container hidden">
+      <div class="descripcionContainer">
+        En este apartado se sorteará el arma a jugar
+      </div>
+      <div class="shuffleContainerSingle">
+        <div class="shuffleBoxSingleArma">
+          <div class="shuffleElementSingle">
+            <img src="" alt="" class="map">
+          </div>
+        </div>
+        <div class="shuffleElementName"></div>
+      </div>
+      <button class="shuffleButtonSingle">SHUFFLE</button>
+    </div>
+    <div id="containerCasco" class="container hidden">
+      <div class="descripcionContainer">
+        En este apartado se sorteará el casco a jugar
+      </div>
+      <div class="shuffleContainerSingle">
+        <div class="shuffleBoxSingle">
+          <div class="shuffleElementSingle">
+            <img src="" alt="" class="map">
+          </div>
+        </div>
+        <div class="shuffleElementName"></div>
+      </div>
+      <button class="shuffleButtonSingle">SHUFFLE</button>
+    </div>
+    <div id="containerChaleco" class="container hidden">
+      <div class="descripcionContainer">
+        En este apartado se sorteará el chaleco a jugar
+      </div>
+      <div class="shuffleContainerSingle">
+        <div class="shuffleBoxSingle">
+          <div class="shuffleElementSingle">
+            <img src="" alt="" class="map">
+          </div>
+        </div>
+        <div class="shuffleElementName"></div>
+      </div>
+      <button class="shuffleButtonSingle">SHUFFLE</button>
+    </div>
+    <div id="containerAbout" class="container hidden">
+      <div class="homeTitle">Bienvenidos al randomizador de Delta Force</div>
+      <div class="homeDescription">
+        <div class="homeTexto">¡Lleva tus partidas de Delta Force al siguiente nivel! Con nuestro randomizador,
+          cada partida se convierte en una experiencia única y desafiante: se seleccionan al azar el mapa,
+          agente, arma, casco y chaleco de cada jugador, haciendo que cada partida sea imprevisible y
+          divertida. Además, los viewers pueden interactuar con el streamer, influyendo en las elecciones
+          aleatorias y haciendo que la partida sea aún más emocionante y participativa.
+          <br><br>
+          Ideal para streamers que juegan de manera conjunta, permite que todos los jugadores tengan
+          combinaciones distintas, fomentando la creatividad y la estrategia en tiempo real.
+          <br><br>
+          Diseñado por
+          Bryan Jaen y Epiko (Nacho Díaz), este randomizador organiza cada categoría en secciones separadas
+          para que cada elemento pueda seleccionarse de forma independiente y justa, garantizando partidas
+          dinámicas y emocionantes.
+        </div>
+        <div class="listadoHome">
+          <li class="explicacion">Mapa - Selecciona al azar uno de los mapas disponibles en Delta Force, cada
+            partida puede desarrollarse en un entorno distinto, cambiando la estrategia del equipo.</li>
+          <li class="explicacion">Agente - Elige aleatoriamente el personaje o skin que controlará el jugador.
+          </li>
+          <li class="explicacion">Arma - Selecciona al azar el arma principal o secundaria para el jugador,
+            Hace que cada partida sea un reto diferente, obligando a adaptarse a distintos estilos de
+            combate.</li>
+          <li class="explicacion">Casco - Determina de forma aleatoria el casco que llevará el jugador,
+            ofreciendo distintos niveles de protección y apariencia.</li>
+          <li class="explicacion">Chaleco - Escoge al azar el chaleco táctico del jugador ,cada combinación
+            cambia la movilidad y la resistencia, afectando la estrategia de juego.</li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footerContainer">
+
+      <div class="copyright"></div>
+
+      <div class="github-section">
+        <div class="github-profile">
+          <a href="https://github.com/Epiiko/" target="_blank" class="github-name">
+            <img src="https://avatars.githubusercontent.com/u/146927522?s=48&v=4" alt="epiiko" class="github-avatar">
+          </a>
+          <a href="https://github.com/Epiiko" target="_blank" class="github-name">Epiiko</a>
+          <span class="github-username">@Epiiko</span>
+        </div>
+
+        <div class="github-profile">
+          <a href="https://github.com/jaendev" class="github-name" target="_blank">
+            <img src="https://avatars.githubusercontent.com/u/91150400?v=4" alt="jaendev" class="github-avatar">
+          </a>
+          <a href="https://github.com/jaendev" class="github-name" target="_blank">JaenDev</a>
+          <span class="github-username">@jaendev</span>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <h3 class="team-title">🎖️ Equipo Delta Force</h3>
+        <div class="team-members">
+          <a href="https://www.twitch.tv/campasoo">
+            <div class="team-member">Campaso</div>
+          </a>
+          <a href="https://www.twitch.tv/hyggekd">
+            <div class="team-member">Hygge</div>
+          </a>
+          <a href="https://www.twitch.tv/nemereth">
+            <div class="team-member">Nemereth</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 

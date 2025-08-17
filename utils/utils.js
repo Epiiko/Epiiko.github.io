@@ -1,6 +1,16 @@
 import { CASCOS, MAPAS, CHALECOS, AGENTES, ARMAS } from "./equipament.js";
 import * as  LS from "./recuperarLocalStorage.js"
 
+
+// Configuración de velocidades
+const velocidades = {
+  arma: 100,
+  mapa: 100,
+  casco: 100,
+  chaleco: 100,
+  agente: 100
+};
+
 function recuperarPersistenciaInfo() {
   localStorage.getItem("completo") ? LS.injectarCompleto() : LS.randomCompleto()
   localStorage.getItem("mapa") ? LS.injectarMapa() : LS.randomMapa()
@@ -61,7 +71,7 @@ function mapaAleatorio() {
       nameMapa.textContent = `${MAPAS[randomIndex].name} - ${MAPAS[randomIndex].dificultad}`;
       imgMapa.style.transform = "rotateX(0deg)";
     }, 100);
-  }, 150);
+  }, velocidades.mapa);
 
   // paramos a los 8 segundos
   setTimeout(() => {
@@ -97,7 +107,7 @@ function chalecoAleatorio() {
       nameChaleco.textContent = `${CHALECOS[randomIndex].name} - ${CHALECOS[randomIndex].calidad}`;
       imgChaleco.style.transform = "rotateX(0deg)";
     }, 100);
-  }, 150);
+  }, velocidades.chaleco);
 
   // paramos a los 8 segundos
   setTimeout(() => {
@@ -132,7 +142,7 @@ function cascoAleatorio() {
       nameCasco.textContent = `${CASCOS[randomIndex].name} - ${CASCOS[randomIndex].calidad}`;
       imgCasco.style.transform = "rotateX(0deg)";
     }, 100);
-  }, 150);
+  }, velocidades.casco);
 
   // paramos a los 8 segundos
   setTimeout(() => {
@@ -167,7 +177,7 @@ function agenteAleatorio() {
       nameAgente.textContent = AGENTES[randomIndex].name;
       imgAgente.style.transform = "rotateX(0deg)";
     }, 100);
-  }, 150);
+  }, velocidades.agente);
 
   // paramos a los 8 segundos
   setTimeout(() => {
@@ -201,7 +211,7 @@ function armaAleatorio() {
       nameArma.textContent = ARMAS[randomIndex].name;
       imgArma.style.transform = "rotateX(0deg)";
     }, 100);
-  }, 150);
+  }, velocidades.arma);
 
   // paramos a los 8 segundos
   setTimeout(() => {
@@ -221,6 +231,7 @@ function armaAleatorio() {
   }, 6000);
 
 }
+
 function completoAleatorio() {
   const imgArma = document.querySelector('.itemArma img')
   const nameArma = document.querySelector('.itemArma .shuffleElementName');
@@ -233,73 +244,117 @@ function completoAleatorio() {
   const imgAgente = document.querySelector('.itemAgente img')
   const nameAgente = document.querySelector('.itemAgente .shuffleElementName');
 
-  let intervalo;
   let completoSelected;
-  intervalo = setInterval(() => {
+  const intervalos = []; // Array para almacenar todos los intervalos
+
+  // INTERVALO ARMAS
+  const intervaloArma = setInterval(() => {
     imgArma.style.transform = "rotateX(90deg)";
     setTimeout(() => {
       const randomIndexArma = Math.floor(Math.random() * ARMAS.length);
-      const randomIndexMapa = Math.floor(Math.random() * MAPAS.length);
-      const randomIndexCasco = Math.floor(Math.random() * CASCOS.length);
-      const randomIndexChaleco = Math.floor(Math.random() * CHALECOS.length);
-      const randomIndexAgente = Math.floor(Math.random() * AGENTES.length);
       imgArma.src = ARMAS[randomIndexArma].image;
       nameArma.textContent = ARMAS[randomIndexArma].name;
-      //fin arma
+      imgArma.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, velocidades.arma);
+  intervalos.push(intervaloArma);
+
+  // INTERVALO MAPAS
+  const intervaloMapa = setInterval(() => {
+    imgMapa.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndexMapa = Math.floor(Math.random() * MAPAS.length);
       imgMapa.src = MAPAS[randomIndexMapa].image;
       nameMapa.textContent = `${MAPAS[randomIndexMapa].name} - ${MAPAS[randomIndexMapa].dificultad}`;
-      //fin mapa
+      imgMapa.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, velocidades.mapa);
+  intervalos.push(intervaloMapa);
+
+  // INTERVALO CASCOS
+  const intervaloCasco = setInterval(() => {
+    imgCasco.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndexCasco = Math.floor(Math.random() * CASCOS.length);
       imgCasco.src = CASCOS[randomIndexCasco].image;
       nameCasco.textContent = `${CASCOS[randomIndexCasco].name} - ${CASCOS[randomIndexCasco].calidad}`;
-      //fin casco
+      imgCasco.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, velocidades.casco);
+  intervalos.push(intervaloCasco);
+
+  // INTERVALO CHALECOS
+  const intervaloChaleco = setInterval(() => {
+    imgChaleco.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndexChaleco = Math.floor(Math.random() * CHALECOS.length);
       imgChaleco.src = CHALECOS[randomIndexChaleco].image;
       nameChaleco.textContent = `${CHALECOS[randomIndexChaleco].name} - ${CHALECOS[randomIndexChaleco].calidad}`;
-      //fin chaleco
+      imgChaleco.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, velocidades.chaleco);
+  intervalos.push(intervaloChaleco);
+
+  // INTERVALO AGENTES
+  const intervaloAgente = setInterval(() => {
+    imgAgente.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndexAgente = Math.floor(Math.random() * AGENTES.length);
       imgAgente.src = AGENTES[randomIndexAgente].image;
       nameAgente.textContent = AGENTES[randomIndexAgente].name;
-      //fin agentes
-      imgArma.style.transform = "rotateX(0deg)";
-      imgMapa.style.transform = "rotateX(0deg)";
-      imgCasco.style.transform = "rotateX(0deg)";
-      imgChaleco.style.transform = "rotateX(0deg)";
       imgAgente.style.transform = "rotateX(0deg)";
     }, 100);
-  }, 150);
+  }, velocidades.agente);
+  intervalos.push(intervaloAgente);
 
-  // paramos a los 8 segundos
+  // Paramos todos los intervalos a los 6 segundos
   setTimeout(() => {
-    clearInterval(intervalo);
+    // Limpiar todos los intervalos
+    intervalos.forEach(intervalo => clearInterval(intervalo));
+
+    // Generar selecciones finales
     const finalIndexArma = Math.floor(Math.random() * ARMAS.length);
     const finalIndexMapa = Math.floor(Math.random() * MAPAS.length);
     const finalIndexCasco = Math.floor(Math.random() * CASCOS.length);
     const finalIndexChaleco = Math.floor(Math.random() * CHALECOS.length);
     const finalIndexAgente = Math.floor(Math.random() * AGENTES.length);
+
+    // Animación final para todos los elementos
     imgArma.style.transform = "rotateX(90deg)";
     imgMapa.style.transform = "rotateX(90deg)";
     imgCasco.style.transform = "rotateX(90deg)";
     imgChaleco.style.transform = "rotateX(90deg)";
     imgAgente.style.transform = "rotateX(90deg)";
+
     setTimeout(() => {
+      // RESULTADOS FINALES
+
+      // ARMA FINAL
       imgArma.src = ARMAS[finalIndexArma].image;
       nameArma.textContent = ARMAS[finalIndexArma].name;
       imgArma.style.transform = "rotateX(0deg)";
-      //fin arma
+
+      // MAPA FINAL
       imgMapa.src = MAPAS[finalIndexMapa].image;
-      nameMapa.textContent =`${MAPAS[finalIndexMapa].name} - ${MAPAS[finalIndexMapa].dificultad}`;
+      nameMapa.textContent = `${MAPAS[finalIndexMapa].name} - ${MAPAS[finalIndexMapa].dificultad}`;
       imgMapa.style.transform = "rotateX(0deg)";
-      //fin mapa
+
+      // CASCO FINAL
       imgCasco.src = CASCOS[finalIndexCasco].image;
-      nameCasco.textContent =  `${CASCOS[finalIndexCasco].name} - ${CASCOS[finalIndexCasco].calidad}`;
+      nameCasco.textContent = `${CASCOS[finalIndexCasco].name} - ${CASCOS[finalIndexCasco].calidad}`;
       imgCasco.style.transform = "rotateX(0deg)";
-      //fin casco
+
+      // CHALECO FINAL
       imgChaleco.src = CHALECOS[finalIndexChaleco].image;
-      nameChaleco.textContent =  `${CHALECOS[finalIndexChaleco].name} - ${CHALECOS[finalIndexChaleco].calidad}`;
+      nameChaleco.textContent = `${CHALECOS[finalIndexChaleco].name} - ${CHALECOS[finalIndexChaleco].calidad}`;
       imgChaleco.style.transform = "rotateX(0deg)";
-      //fin chaleco
+
+      // AGENTE FINAL
       imgAgente.src = AGENTES[finalIndexAgente].image;
-      nameAgente.textContent =  AGENTES[finalIndexAgente].name;
+      nameAgente.textContent = AGENTES[finalIndexAgente].name;
       imgAgente.style.transform = "rotateX(0deg)";
-      //fin agente
+
+      // Guardar selección completa
       completoSelected = {
         arma: {
           name: ARMAS[finalIndexArma].name,
@@ -324,12 +379,11 @@ function completoAleatorio() {
           name: AGENTES[finalIndexAgente].name,
           image: AGENTES[finalIndexAgente].image,
         }
-
       }
+
       almacenarItem("completo", completoSelected);
     }, 100);
   }, 6000);
-
 }
 
 function almacenarItem(tipoObjeto, objeto) {
@@ -367,4 +421,3 @@ document.querySelector('#containerArma .shuffleButtonSingle').addEventListener('
 toogleClassMostrar();
 actualizarAno();
 recuperarPersistenciaInfo()
-
