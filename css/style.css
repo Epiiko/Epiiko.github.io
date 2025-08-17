@@ -227,7 +227,9 @@
   font-weight: bold;
   font-size: 2.2vh;
 }
-
+.team-members a:visited{
+  text-decoration: none;
+}
 .shuffleContainerSingle {
   height: 100%;
   width: 100%;
@@ -379,7 +381,7 @@
 
 .containerGigante {
   height: 100%;
-  width: 80%;
+  width: 100%;
   place-content: center;
   text-align: center;
 }
