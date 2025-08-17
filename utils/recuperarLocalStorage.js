@@ -44,8 +44,8 @@ export function randomCasco() {
   nameCasco.innerHTML = `${CASCOS[numRandom].name} - ${CASCOS[numRandom].calidad}`
 }
 export function randomChaleco() {
-  const imgChaleco = document.querySelector('#containerCasco .shuffleElementSingle img')
-  const nameChaleco = document.querySelector('#containerCasco .shuffleContainerSingle .shuffleElementName');
+  const imgChaleco = document.querySelector('#containerChaleco .shuffleElementSingle img')
+  const nameChaleco = document.querySelector('#containerChaleco .shuffleContainerSingle .shuffleElementName');
 
   let numRandom = Math.floor(Math.random() * CHALECOS.length);
 

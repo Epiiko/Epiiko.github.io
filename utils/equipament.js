@@ -166,15 +166,15 @@ export const AGENTES = [
         image: '../img/agents/agent2.jpg'
     },
     {
-        name: 'D-WOLF',
+        name: 'VYRON',
         image: '../img/agents/agent3.jpg'
     },
     {
-        name: 'D-WOLF',
+        name: 'STINGER',
         image: '../img/agents/agent4.jpg'
     },
     {
-        name: 'D-WOLF',
+        name: 'HACKCLAW',
         image: '../img/agents/agent5.jpg'
     },
     {
@@ -186,7 +186,7 @@ export const AGENTES = [
         image: '../img/agents/agent7.jpg'
     },
     {
-        name: 'SINEVA',
+        name: 'ULURU',
         image: '../img/agents/agent8.jpg'
     },
     {
@@ -194,7 +194,7 @@ export const AGENTES = [
         image: '../img/agents/agent9.jpg'
     },
     {
-        name: 'TOXIC',
+        name: 'SINEVA',
         image: '../img/agents/agent10.jpg'
     },
 ]
