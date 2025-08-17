@@ -1,13 +1,13 @@
-import { CASCOS, MAPAS, CHALECOS } from "./equipament.js";
+import { CASCOS, MAPAS, CHALECOS, AGENTES } from "./equipament.js";
 import * as  LS from "./recuperarLocalStorage.js"
 
 function recuperarPersistenciaInfo() {
-  localStorage.getItem("completo") ? LS.randomCompleto() : LS.injectarCompleto()
-  !localStorage.getItem("mapa") ? LS.randomMapa() : LS.injectarMapa()
-  localStorage.getItem("agente") ? LS.randomAgente() : LS.injectarAgente()
-  localStorage.getItem("arma") ? LS.randomArma() : LS.injectarArma()
-  !localStorage.getItem("casco") ? LS.randomCasco() : LS.injectarCasco()
-  !localStorage.getItem("chaleco") ? LS.randomChaleco() : LS.injectarChaleco()
+  localStorage.getItem("completo") ? LS.injectarCompleto() : LS.randomCompleto()
+  localStorage.getItem("mapa") ? LS.injectarMapa() : LS.randomMapa()
+  localStorage.getItem("agente") ? LS.injectarAgente() : LS.randomAgente()
+  localStorage.getItem("arma") ? LS.injectarArma() : LS.randomArma()
+  localStorage.getItem("casco") ? LS.injectarCasco() : LS.randomCasco()
+  localStorage.getItem("chaleco") ? LS.injectarChaleco() : LS.randomChaleco()
 }
 
 /**
@@ -153,6 +153,40 @@ function cascoAleatorio() {
   }, 6000);
 
 }
+function agenteAleatorio() {
+  const imgAgente = document.querySelector('#containerAgente .shuffleElementSingle img')
+  const nameAgente = document.querySelector('#containerAgente .shuffleContainerSingle .shuffleElementName');
+
+  let intervalo;
+  let agenteSelected;
+  intervalo = setInterval(() => {
+    imgAgente.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * AGENTES.length);
+      imgAgente.src = AGENTES[randomIndex].image;
+      nameAgente.textContent = AGENTES[randomIndex].name;
+      imgAgente.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, 150);
+
+  // paramos a los 8 segundos
+  setTimeout(() => {
+    clearInterval(intervalo);
+    const finalIndex = Math.floor(Math.random() * AGENTES.length);
+    imgAgente.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      imgAgente.src = AGENTES[finalIndex].image;
+      nameAgente.textContent = AGENTES[finalIndex].name;
+      imgAgente.style.transform = "rotateX(0deg)";
+      agenteSelected = {
+        name: AGENTES[finalIndex].name,
+        image: AGENTES[finalIndex].image
+      }
+      almacenarItem("agente", agenteSelected);
+    }, 100);
+  }, 6000);
+
+}
 
 function almacenarItem(tipoObjeto, objeto) {
   localStorage.setItem(tipoObjeto, JSON.stringify(objeto))
@@ -170,6 +204,10 @@ document.querySelector('#containerChaleco .shuffleButtonSingle').addEventListene
 //casco
 document.querySelector('#containerCasco .shuffleButtonSingle').addEventListener('click', () => {
   cascoAleatorio();
+})
+//agente
+document.querySelector('#containerAgente .shuffleButtonSingle').addEventListener('click', () => {
+  agenteAleatorio();
 })
 
 //funciones directas

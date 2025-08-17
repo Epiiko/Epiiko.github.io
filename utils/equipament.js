@@ -157,7 +157,48 @@ export const CHALECOS = [
     },
 
 ]
-
+export const AGENTES =[
+    {
+        name: 'D-WOLF',
+        image: '../img/agents/agent1.jpg'
+    },
+    {
+        name: 'NOX',
+        image: '../img/agents/agent2.jpg'
+    },
+    {
+        name: 'D-WOLF',
+        image: '../img/agents/agent3.jpg'
+    },
+    {
+        name: 'D-WOLF',
+        image: '../img/agents/agent4.jpg'
+    },
+    {
+        name: 'D-WOLF',
+        image: '../img/agents/agent5.jpg'
+    },
+    {
+        name: 'LUNA',
+        image: '../img/agents/agent6.jpg'
+    },
+    {
+        name: 'SHEPERD',
+        image: '../img/agents/agent7.jpg'
+    },
+    {
+        name: 'SINEVA',
+        image: '../img/agents/agent8.jpg'
+    },
+    {
+        name: 'TOXIC',
+        image: '../img/agents/agent9.jpg'
+    },
+    {
+        name: 'TOXIC',
+        image: '../img/agents/agent10.jpg'
+    },
+]
 export const CASCOS = [
     {
         name: 'GN Heavy NV',
