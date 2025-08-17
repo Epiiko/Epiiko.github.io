@@ -1,4 +1,4 @@
-import { CASCOS, MAPAS, CHALECOS, AGENTES } from "./equipament.js";
+import { CASCOS, MAPAS, CHALECOS, AGENTES, ARMAS } from "./equipament.js";
 import * as  LS from "./recuperarLocalStorage.js"
 
 function recuperarPersistenciaInfo() {
@@ -187,6 +187,40 @@ function agenteAleatorio() {
   }, 6000);
 
 }
+function armaAleatorio() {
+  const imgArma = document.querySelector('#containerArma .shuffleElementSingle img')
+  const nameArma = document.querySelector('#containerArma .shuffleContainerSingle .shuffleElementName');
+
+  let intervalo;
+  let armaSelected;
+  intervalo = setInterval(() => {
+    imgArma.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * ARMAS.length);
+      imgArma.src = ARMAS[randomIndex].image;
+      nameArma.textContent = ARMAS[randomIndex].name;
+      imgArma.style.transform = "rotateX(0deg)";
+    }, 100);
+  }, 150);
+
+  // paramos a los 8 segundos
+  setTimeout(() => {
+    clearInterval(intervalo);
+    const finalIndex = Math.floor(Math.random() * ARMAS.length);
+    imgArma.style.transform = "rotateX(90deg)";
+    setTimeout(() => {
+      imgArma.src = ARMAS[finalIndex].image;
+      nameArma.textContent = ARMAS[finalIndex].name;
+      imgArma.style.transform = "rotateX(0deg)";
+      armaSelected = {
+        name: ARMAS[finalIndex].name,
+        image: ARMAS[finalIndex].image
+      }
+      almacenarItem("arma", armaSelected);
+    }, 100);
+  }, 6000);
+
+}
 
 function almacenarItem(tipoObjeto, objeto) {
   localStorage.setItem(tipoObjeto, JSON.stringify(objeto))
@@ -208,6 +242,9 @@ document.querySelector('#containerCasco .shuffleButtonSingle').addEventListener(
 //agente
 document.querySelector('#containerAgente .shuffleButtonSingle').addEventListener('click', () => {
   agenteAleatorio();
+})
+document.querySelector('#containerArma .shuffleButtonSingle').addEventListener('click', () => {
+  armaAleatorio();
 })
 
 //funciones directas

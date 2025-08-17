@@ -292,7 +292,28 @@
   width: 100%;
   height: 100%;
 }
-
+.shuffleBoxSingleArma {
+  height: 20vh;
+  background-image: url("../img/fondoShuffle.jpg");
+  width: 21vw;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.575);
+}
+.shuffleBoxSingleMapa {
+  height: 20vh;
+  background-image: url("../img/fondoShuffle.jpg");
+  width: 21vw;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.575);
+}
 /*FIN ABOUT CONTAINER*/
 
 /*FIN CONTENT*/

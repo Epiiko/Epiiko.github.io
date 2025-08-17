@@ -48,7 +48,6 @@ export const MAPAS = [
         image: '../img/maps/map8.png',
     },
 ]
-
 export const CHALECOS = [
     {
         name: 'Heavy Asault',
@@ -157,7 +156,7 @@ export const CHALECOS = [
     },
 
 ]
-export const AGENTES =[
+export const AGENTES = [
     {
         name: 'D-WOLF',
         image: '../img/agents/agent1.jpg'
@@ -199,6 +198,7 @@ export const AGENTES =[
         image: '../img/agents/agent10.jpg'
     },
 ]
+
 export const CASCOS = [
     {
         name: 'GN Heavy NV',
@@ -309,5 +309,203 @@ export const CASCOS = [
         name: 'Steel',
         calidad: CALIDADES[0],
         image: '../img/helmets/casco19.png',
+    },
+]
+export const ARMAS = [
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp1.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp2.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp3.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp4.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp5.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp6.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp7.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp8.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp9.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp10.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp11.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp12.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp13.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp14.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp15.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp16.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp17.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp18.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp19.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp20.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp21.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp22.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp23.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp24.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp25.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp27.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp28.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp29.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp30.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp31.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp32.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp33.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp34.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp35.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp36.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp37.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp38.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp39.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp40.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp41.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp42.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp43.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp44.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp45.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp46.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp47.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp48.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp49.png'
+    },
+    {
+        name: 'ARMA1',
+        image: '../img/weapons/wp50.png'
     },
 ]

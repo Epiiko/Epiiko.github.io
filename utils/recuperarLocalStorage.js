@@ -1,4 +1,4 @@
-import { CASCOS, CHALECOS, MAPAS, AGENTES } from "./equipament.js";
+import { CASCOS, CHALECOS, MAPAS, AGENTES, ARMAS } from "./equipament.js";
 
 // Random
 export function randomCompleto() {
@@ -25,7 +25,12 @@ export function randomAgente() {
 }
 
 export function randomArma() {
+  const imgArma = document.querySelector('#containerArma .shuffleElementSingle img')
+  const nameArma = document.querySelector('#containerArma .shuffleContainerSingle .shuffleElementName');
+  let numRandom = Math.floor(Math.random() * ARMAS.length);
 
+  imgArma.src = ARMAS[numRandom].image;
+  nameArma.innerHTML = ARMAS[numRandom].name
 }
 
 export function randomCasco() {
@@ -71,7 +76,11 @@ export function injectarAgente() {
 }
 
 export function injectarArma() {
-
+  const imgArma = document.querySelector('#containerArma .shuffleElementSingle img')
+  const nameArma = document.querySelector('#containerArma .shuffleContainerSingle .shuffleElementName');
+  let arma = JSON.parse(localStorage.getItem("arma"))
+  imgArma.src = arma.image;
+  nameArma.innerHTML = arma.name
 }
 
 export function injectarCasco() {
