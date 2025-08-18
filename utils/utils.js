@@ -1,4 +1,4 @@
-import { CASCOS, MAPAS, CHALECOS, AGENTES, ARMAS } from "./equipament.js";
+import { CASCOS, MAPAS, CHALECOS, AGENTES, ARMAS, CALIDADES } from "./equipament.js";
 import * as  LS from "./recuperarLocalStorage.js"
 
 
@@ -316,7 +316,6 @@ function completoAleatorio() {
 
     // Generar selecciones finales
     const finalIndexArma = Math.floor(Math.random() * ARMAS.length);
-    const finalIndexMapa = Math.floor(Math.random() * MAPAS.length);
     const finalIndexCasco = Math.floor(Math.random() * CASCOS.length);
     const finalIndexChaleco = Math.floor(Math.random() * CHALECOS.length);
     const finalIndexAgente = Math.floor(Math.random() * AGENTES.length);
@@ -336,10 +335,7 @@ function completoAleatorio() {
       nameArma.textContent = ARMAS[finalIndexArma].name;
       imgArma.style.transform = "rotateX(0deg)";
 
-      // MAPA FINAL
-      imgMapa.src = MAPAS[finalIndexMapa].image;
-      nameMapa.textContent = `${MAPAS[finalIndexMapa].name} - ${MAPAS[finalIndexMapa].dificultad}`;
-      imgMapa.style.transform = "rotateX(0deg)";
+
 
       // CASCO FINAL
       imgCasco.src = CASCOS[finalIndexCasco].image;
@@ -356,6 +352,20 @@ function completoAleatorio() {
       nameAgente.textContent = AGENTES[finalIndexAgente].name;
       imgAgente.style.transform = "rotateX(0deg)";
 
+      //TODO EL MAPA
+      // MAPA FINAL
+      let mapasCopy = [...MAPAS];
+      let mapaFinal;
+      //Si sale dorado en casco o chaleco quitamos los easy del array
+      if(CASCOS[finalIndexCasco].calidad==CALIDADES[4] || CHALECOS[finalIndexChaleco].calidad==[4]){
+        mapaFinal=mapasCopy.filter(m => m.dificultad!='Easy')
+      }else{
+        mapaFinal=[...mapasCopy]
+      }
+      const finalIndexMapa = Math.floor(Math.random() * mapaFinal.length);;
+      imgMapa.src = mapaFinal[finalIndexMapa].image;
+      nameMapa.textContent = `${mapaFinal[finalIndexMapa].name} - ${mapaFinal[finalIndexMapa].dificultad}`;
+      imgMapa.style.transform = "rotateX(0deg)";
       // Guardar selección completa
       completoSelected = {
         arma: {
@@ -363,9 +373,9 @@ function completoAleatorio() {
           image: ARMAS[finalIndexArma].image
         },
         mapa: {
-          name: MAPAS[finalIndexMapa].name,
-          image: MAPAS[finalIndexMapa].image,
-          dificultad: MAPAS[finalIndexMapa].dificultad
+          name: mapaFinal[finalIndexMapa].name,
+          image: mapaFinal[finalIndexMapa].image,
+          dificultad: mapaFinal[finalIndexMapa].dificultad
         },
         casco: {
           name: CASCOS[finalIndexCasco].name,
