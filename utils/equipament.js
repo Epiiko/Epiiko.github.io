@@ -209,6 +209,10 @@ export const AGENTES = [
     name: 'SINEVA',
     image: '../img/agents/agent10.jpg'
   },
+  {
+    name: 'TEMPEST',
+    image: '../img/agents/agent11.jpg'
+  },
 ]
 
 export const CASCOS = [

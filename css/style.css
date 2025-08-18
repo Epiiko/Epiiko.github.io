@@ -875,6 +875,13 @@ body {
   font-size: 1.2rem;
 }
 
+.contador{
+  position: fixed;
+  right: 5%;
+  top: 95%;
+  width: 5.5%;
+}
+
 /* ===== FOOTER ===== */
 
 .footer {
