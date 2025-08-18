@@ -55,7 +55,7 @@ export const MAPAS = [
   {
     name: 'Zero Dam Night',
     dificultad: 'Night',
-    image: '../img/maps/map2.png', // <- actualizar mapa
+    image: '../img/maps/map9.png',
     hora: ["8", "9", "20", "21"]
   },
 ]
