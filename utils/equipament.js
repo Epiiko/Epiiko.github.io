@@ -7,21 +7,21 @@ export const CALIDADES = [
     'Rojo', // 5
 ]
 export const MAPAS = [
-    {
+    /*{
         name: 'Zero Dam',
         dificultad: 'Easy',
         image: '../img/maps/map1.png',
-    },
+    },*/
     {
         name: 'Zero Dam',
         dificultad: 'Normal',
         image: '../img/maps/map2.png',
     },
-    {
+    /*{
         name: 'Layali',
         dificultad: 'Easy',
         image: '../img/maps/map3.png',
-    },
+    },*/
     {
         name: 'Layali',
         dificultad: 'Normal',
