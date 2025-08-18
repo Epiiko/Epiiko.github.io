@@ -1,4 +1,4 @@
-import { CASCOS, MAPAS, CHALECOS, AGENTES, ARMAS, CALIDADES } from "./equipament.js";
+import { CASCOS, MAPAS as mapasHoraActual, CHALECOS, AGENTES, ARMAS, CALIDADES } from "./equipament.js";
 import * as  LS from "./recuperarLocalStorage.js"
 
 
@@ -64,13 +64,14 @@ function mapaAleatorio() {
 
   let intervalo;
   let mapaSelected;
+  let mapasHoraActual = filtrarHorarioMapa();
 
   intervalo = setInterval(() => {
     imgMapa.style.transform = "rotateX(90deg)";
     setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * MAPAS.length);
-      imgMapa.src = MAPAS[randomIndex].image;
-      nameMapa.textContent = `${MAPAS[randomIndex].name} - ${MAPAS[randomIndex].dificultad}`;
+      const randomIndex = Math.floor(Math.random() * mapasHoraActual.length);
+      imgMapa.src = mapasHoraActual[randomIndex].image;
+      nameMapa.textContent = `${mapasHoraActual[randomIndex].name} - ${mapasHoraActual[randomIndex].dificultad}`;
       imgMapa.style.transform = "rotateX(0deg)";
     }, 100);
   }, velocidades.mapa);
@@ -78,16 +79,16 @@ function mapaAleatorio() {
   // paramos a los 8 segundos
   setTimeout(() => {
     clearInterval(intervalo);
-    const finalIndex = Math.floor(Math.random() * MAPAS.length);
+    const finalIndex = Math.floor(Math.random() * mapasHoraActual.length);
     imgMapa.style.transform = "rotateX(90deg)";
     setTimeout(() => {
-      imgMapa.src = MAPAS[finalIndex].image;
-      nameMapa.textContent = `${MAPAS[finalIndex].name} - ${MAPAS[finalIndex].dificultad}`;
+      imgMapa.src = mapasHoraActual[finalIndex].image;
+      nameMapa.textContent = `${mapasHoraActual[finalIndex].name} - ${mapasHoraActual[finalIndex].dificultad}`;
       imgMapa.style.transform = "rotateX(0deg)";
       mapaSelected = {
-        name: MAPAS[finalIndex].name,
-        dificultad: MAPAS[finalIndex].dificultad,
-        image: MAPAS[finalIndex].image
+        name: mapasHoraActual[finalIndex].name,
+        dificultad: mapasHoraActual[finalIndex].dificultad,
+        image: mapasHoraActual[finalIndex].image
       }
       almacenarItem("mapa", mapaSelected);
     }, 100);
@@ -231,7 +232,6 @@ function armaAleatorio() {
       almacenarItem("arma", armaSelected);
     }, 100);
   }, 6000);
-
 }
 
 function completoAleatorio() {
@@ -265,9 +265,9 @@ function completoAleatorio() {
   const intervaloMapa = setInterval(() => {
     imgMapa.style.transform = "rotateX(90deg)";
     setTimeout(() => {
-      const randomIndexMapa = Math.floor(Math.random() * MAPAS.length);
-      imgMapa.src = MAPAS[randomIndexMapa].image;
-      nameMapa.textContent = `${MAPAS[randomIndexMapa].name} - ${MAPAS[randomIndexMapa].dificultad}`;
+      const randomIndexMapa = Math.floor(Math.random() * mapasHoraActual.length);
+      imgMapa.src = mapasHoraActual[randomIndexMapa].image;
+      nameMapa.textContent = `${mapasHoraActual[randomIndexMapa].name} - ${mapasHoraActual[randomIndexMapa].dificultad}`;
       imgMapa.style.transform = "rotateX(0deg)";
     }, 100);
   }, velocidades.mapa);
@@ -352,17 +352,19 @@ function completoAleatorio() {
       nameAgente.textContent = AGENTES[finalIndexAgente].name;
       imgAgente.style.transform = "rotateX(0deg)";
 
-      //TODO EL MAPA
       // MAPA FINAL
-      let mapasCopy = [...MAPAS];
+      let mapasCopy = [...filtrarHorarioMapa()];
+
       let mapaFinal;
       //Si sale dorado en casco o chaleco quitamos los easy del array
-      if(CASCOS[finalIndexCasco].calidad==CALIDADES[4] || CHALECOS[finalIndexChaleco].calidad==[4]){
-        mapaFinal=mapasCopy.filter(m => m.dificultad!='Easy')
-      }else{
-        mapaFinal=[...mapasCopy]
+      if (CASCOS[finalIndexCasco].calidad == CALIDADES[4] || CHALECOS[finalIndexChaleco].calidad == [4]) {
+        mapaFinal = mapasCopy.filter(m => m.dificultad != 'Easy')
+      } else {
+        mapaFinal = [...mapasCopy]
       }
-      const finalIndexMapa = Math.floor(Math.random() * mapaFinal.length);;
+
+      const finalIndexMapa = Math.floor(Math.random() * mapaFinal.length);
+
       imgMapa.src = mapaFinal[finalIndexMapa].image;
       nameMapa.textContent = `${mapaFinal[finalIndexMapa].name} - ${mapaFinal[finalIndexMapa].dificultad}`;
       imgMapa.style.transform = "rotateX(0deg)";
@@ -400,6 +402,14 @@ function completoAleatorio() {
 
 function almacenarItem(tipoObjeto, objeto) {
   localStorage.setItem(tipoObjeto, JSON.stringify(objeto))
+}
+
+function filtrarHorarioMapa() {
+  const horaActual = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' }).split(' ')[1].split(':')[0];
+  const mapaFiltrado = mapasHoraActual.filter(mapa => {
+    return mapa.hora ? mapa.hora.includes(horaActual) : true;
+  });
+  return mapaFiltrado;
 }
 
 //shuffle botones
