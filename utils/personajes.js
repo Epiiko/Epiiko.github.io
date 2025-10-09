@@ -19,6 +19,7 @@ function checkUser(nickEscrito, passEscrita) {
             const hoy = new Date().toISOString().split('T')[0];
             localStorage.setItem("usuario", nickEscrito)
             localStorage.setItem("token", btoa(nickEscrito + hoy))
+            localStorage.setItem("fechaLogin", hoy)
             window.location.href = "./inicio.html";
             return;
         } else {
@@ -33,3 +34,12 @@ function checkUser(nickEscrito, passEscrita) {
 document.querySelector(".envioLogin").addEventListener("click", () => {
     checkLogin()
 })
+function lookRegisteredUser() {
+    const hoy = new Date().toISOString().split('T')[0];
+    let usuarioLogeado = localStorage.getItem("usuario");
+    let token = localStorage.getItem("token");
+    if (btoa(usuarioLogeado + hoy) == token) {
+        window.location.href = "./inicio.html";
+    }
+}
+lookRegisteredUser()
