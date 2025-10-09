@@ -16,7 +16,6 @@ function checkLocalStorage() {
 function checkUser(nickEscrito, passEscrita) {
     USUARIOS.forEach(user => {
         if (user.name == nickEscrito && btoa(passEscrita) == user.password) {
-            console.log("ADELANTE");
             document.querySelector(".login").style.display = "none";
             return;
         } else {
@@ -30,4 +29,4 @@ function checkUser(nickEscrito, passEscrita) {
 }
 document.querySelector(".envioLogin").addEventListener("click", () => {
     checkLocalStorage()
-})  
+})

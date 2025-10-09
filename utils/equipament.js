@@ -532,7 +532,7 @@ export const USUARIOS =[
     password: "Q2FtcGFzbzEyMzQ=",
   },
   {
-    name: "Hyge",
-    password: "Q2FtcGFzbzEyMzQ=",
+    name: "Hygge",
+    password: "SmFpbWVzaXRvbG9vdA==",
   }
 ]
