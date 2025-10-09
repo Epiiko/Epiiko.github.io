@@ -2,7 +2,7 @@ function checkLoged() {
     const hoy = new Date().toISOString().split('T')[0];
     let usuarioLogeado = localStorage.getItem("usuario");
     let token = localStorage.getItem("token");
-    let fechaLogin = localStorage.getItem("fecha");
+    let fechaLogin = localStorage.getItem("fechaLogin");
     if (!usuarioLogeado || btoa(usuarioLogeado + hoy) != token) {
         window.location.href = "./index.html";
     }
@@ -14,6 +14,7 @@ function checkLoged() {
 }
 function haPasadoMasDeUnDia(fechaString) {
   // Separar año, mes y día del string
+  
   const [anio, mes, dia] = fechaString.split('-').map(Number);
 
   // Crear la fecha a medianoche (mes-1 porque JS cuenta meses 0-11)
@@ -24,7 +25,7 @@ function haPasadoMasDeUnDia(fechaString) {
   // Diferencia en milisegundos
   const diferencia = hoy - fechaGuardada;
   const unDia = 24 * 60 * 60 * 1000;
-
+    
   return diferencia > unDia; // true si ha pasado más de un día
 }
 checkLoged()
