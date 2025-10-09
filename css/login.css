@@ -1,0 +1,103 @@
+/* Contenedor del login */
+.login {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    flex-direction: column;
+}
+
+/* Formulario */
+.login-form h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Grupos de inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Animación de label flotante */
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    color: #00b4d8;
+}
+
+/* Línea animada */
+.input-group input:focus {
+    border-bottom-color: #00b4d8;
+}
+
+/* Botón */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #00b4d8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0096c7;
+    transform: translateY(-2px);
+}
+
+.error-msg {
+    color: #ff4d4d;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff4d4d;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 10%;
+    font-size: 1.2rem;
+}

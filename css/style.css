@@ -1,5 +1,6 @@
 /* ===== MODERN DELTA SHUFFLE DESIGN ===== */
 
+
 * {
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   margin: 0;
@@ -63,6 +64,12 @@ body {
 
 .showed {
   display: block;
+}
+.login{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
 }
 
 /* ===== HEADER & NAVIGATION ===== */

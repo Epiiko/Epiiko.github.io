@@ -6,7 +6,6 @@ export const CALIDADES = [
   'Dorado', // 4
   'Rojo', // 5
 ]
-
 export const MAPAS = [
   {
     name: 'Zero Dam',
@@ -59,7 +58,6 @@ export const MAPAS = [
     hora: ["8", "9", "20", "21"]
   },
 ]
-
 export const CHALECOS = [
   {
     name: 'Heavy Asault',
@@ -214,7 +212,6 @@ export const AGENTES = [
     image: '../img/agents/agent11.jpg'
   },
 ]
-
 export const CASCOS = [
   {
     name: 'GN Heavy NV',
@@ -528,4 +525,14 @@ export const ARMAS = [
     name: 'Compound bow',
     image: '../img/weapons/wp50.png'
   },
+]
+export const USUARIOS =[
+  {
+    name: "Campaso",
+    password: "Q2FtcGFzbzEyMzQ=",
+  },
+  {
+    name: "Hyge",
+    password: "Q2FtcGFzbzEyMzQ=",
+  }
 ]

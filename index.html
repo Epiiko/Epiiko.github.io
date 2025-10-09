@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<div class="login">
+  <form class="login-form">
+    <h2>Iniciar Sesión</h2>
+    <div class="input-group">
+      <input type="text" id="username" required>
+      <label for="username">Usuario</label>
+    </div>
+    <div class="input-group">
+      <input type="password" id="password" required>
+      <label for="password">Contraseña</label>
+    </div>
+    <button type="button" class="envioLogin">Entrar</button>
+  </form>
+  <div class="login-footer">
+    En caso de no tener cuenta o usuario, póngase en contacto con Campaso o Hygge para informarse de las subscripciones.
+  </div>
+</div>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/login.css">
   <link rel="shortcut icon" href="./img/LogoDelta.png" type="image/x-icon">
   <script type="module" src="./utils/utils.js" defer></script>
+  <script type="module" src="./utils/login.js" defer></script>
   <script type="module" src="./utils/recuperarLocalStorage.js"></script>
   <title>Delta Shuffle</title>
 </head>
@@ -346,13 +366,6 @@
               <div class="streamer-info">
                 <h4 class="streamer-name">Hygge</h4>
                 <a href="https://www.twitch.tv/hyggekd" target="_blank" class="streamer-link">Ver en Twitch</a>
-              </div>
-            </div>
-            <div class="streamer-card">
-              <img src="./img/logoTwitch.png" alt="Twitch" class="streamer-icon">
-              <div class="streamer-info">
-                <h4 class="streamer-name">Nemereth</h4>
-                <a href="https://www.twitch.tv/nemereth" target="_blank" class="streamer-link">Ver en Twitch</a>
               </div>
             </div>
           </div>
