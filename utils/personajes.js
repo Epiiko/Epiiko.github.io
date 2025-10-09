@@ -16,7 +16,7 @@ function checkLocalStorage() {
 function checkUser(nickEscrito, passEscrita) {
     USUARIOS.forEach(user => {
         if (user.name == nickEscrito && btoa(passEscrita) == user.password) {
-            document.querySelector(".login").style.display = "none";
+            window.location.href = "./inicio.html";
             return;
         } else {
             if (!document.querySelector(".error-msg")) {
