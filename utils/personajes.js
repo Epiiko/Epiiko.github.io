@@ -1,5 +1,5 @@
 import { USUARIOS } from "./equipament.js"
-function checkLocalStorage() {
+function checkLogin() {
     const nickEscrito = document.querySelector("#username").value;
     const passEscrita = document.querySelector("#password").value;
     if (nickEscrito && passEscrita) {
@@ -16,6 +16,9 @@ function checkLocalStorage() {
 function checkUser(nickEscrito, passEscrita) {
     USUARIOS.forEach(user => {
         if (user.name == nickEscrito && btoa(passEscrita) == user.password) {
+            const hoy = new Date().toISOString().split('T')[0];
+            localStorage.setItem("usuario", nickEscrito)
+            localStorage.setItem("token", btoa(nickEscrito + hoy))
             window.location.href = "./inicio.html";
             return;
         } else {
@@ -28,5 +31,5 @@ function checkUser(nickEscrito, passEscrita) {
     });
 }
 document.querySelector(".envioLogin").addEventListener("click", () => {
-    checkLocalStorage()
+    checkLogin()
 })
