@@ -538,5 +538,9 @@ export const USUARIOS =[
   {
     name: "Hygge",
     password: "SmFpbWVzaXRvbG9vdA==",
+  },
+  {
+    name: "Knarito13",
+    password: "UGFvbGFfMjAwOA==",
   }
 ]
