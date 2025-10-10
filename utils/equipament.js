@@ -211,6 +211,10 @@ export const AGENTES = [
     name: 'TEMPEST',
     image: '../img/agents/agent11.jpg'
   },
+  {
+    name: 'RAPTOR',
+    image: '../img/agents/agent12.jpg'
+  },
 ]
 export const CASCOS = [
   {
