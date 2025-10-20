@@ -529,6 +529,18 @@ export const ARMAS = [
     name: 'Compound bow',
     image: '../img/weapons/wp50.png'
   },
+  {
+    name: 'MK47',
+    image: '../img/weapons/wp51.png'
+  },
+  {
+    name: 'Marlin Lever',
+    image: '../img/weapons/wp52.png'
+  },
+  {
+    name: 'KC17',
+    image: '../img/weapons/wp53.png'
+  },
 ]
 export const USUARIOS =[
   {
