@@ -554,5 +554,9 @@ export const USUARIOS =[
   {
     name: "Knarito13",
     password: "UGFvbGFfMjAwOA==",
+  },
+  {
+    name: "nemereth",
+    password: "dHVtYWRyZXRyYWJhamFlbmNvbG9tYmlh",
   }
 ]
